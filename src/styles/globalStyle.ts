@@ -9,10 +9,14 @@ ${reset}
     margin: 0 auto;
 }
 html {
-    font-size: 62.5%;
-    font-family: Sandoll ClairSans;
-    font-weight: 400;
+    font-size: 62.5%;   
 }
 * {
     box-sizing: border-box;
-}`;
+}
+body{
+    background-color:${({ theme }) => theme.colors.grey10};
+    font-family: Sandoll ClairSans;
+    font-weight: 400;
+}
+`;

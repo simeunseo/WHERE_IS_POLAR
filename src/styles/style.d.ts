@@ -4,6 +4,7 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       //   behance_blue: string;
+      grey10: string;
     };
     fonts: {
       //   behance_acumin_pro_black_80: SerializedStyles;
