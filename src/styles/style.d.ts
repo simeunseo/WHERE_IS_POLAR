@@ -5,6 +5,7 @@ declare module 'styled-components' {
     colors: {
       //   behance_blue: string;
       grey10: string;
+      white: string;
     };
     fonts: {
       //   behance_acumin_pro_black_80: SerializedStyles;
