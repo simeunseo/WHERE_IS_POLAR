@@ -10,6 +10,8 @@ ${reset}
 }
 html {
     font-size: 62.5%;
+    font-family: Sandoll ClairSans;
+    font-weight: 400;
 }
 * {
     box-sizing: border-box;
