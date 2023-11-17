@@ -49,8 +49,10 @@ const DiscriptionModalWrapper = styled.article`
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   border-bottom: none;
+
   position: fixed;
   right: 0;
+  top: 0;
 
   width: 40%;
   height: 100%;
