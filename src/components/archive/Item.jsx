@@ -1,12 +1,15 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
-import Asterisk from '../../assets/svg/asterisk.svg?react';
 import styled from 'styled-components';
 
-const Item = ({ id }) => {
+const Item = ({ id, setIsModalOpen, setCurItem }) => {
   const target = ARCHIVE_DATA.find((item) => item.id === id);
 
+  const handleItemClick = () => {
+    setIsModalOpen(true);
+    setCurItem(target);
+  };
   return (
-    <ItemWrapper>
+    <ItemWrapper onClick={handleItemClick}>
       <Img src={target.img_src} alt={target.name} />
       <PhraseWrapper>
         <Phrase>{target.phrase}</Phrase>
@@ -32,7 +35,7 @@ const Img = styled.img`
 
   filter: grayscale(1);
 
-  transition: all 0.2s;
+  transition: all 0.4s;
   &:hover {
     filter: none;
     cursor: pointer;
@@ -43,7 +46,7 @@ const PhraseWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
 
-  font-size: 4rem;
+  ${({ theme }) => theme.fonts.head1}
 
   position: absolute;
   overflow: hidden;

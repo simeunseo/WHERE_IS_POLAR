@@ -7,14 +7,20 @@ const colors = {
 };
 
 const fonts = {
-  //   behance_acumin_pro_black_80: css`
-  //     font-family: AcuminProBlack;
-  //     font-size: 5rem;
-  //     font-weight: 900;
-  //     font-style: normal;
-  //     line-height: normal;
-  //     letter-spacing: normal;
-  //   `,
+  head1: css`
+    font-size: 4rem;
+  `,
+  head2: css`
+    font-size: 2rem;
+  `,
+  body1: css`
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+  `,
+  question: css`
+    font-size: 1.6rem;
+    font-weight: 700;
+  `,
 };
 
 const theme: DefaultTheme = {

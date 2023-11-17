@@ -3,12 +3,14 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      //   behance_blue: string;
       grey10: string;
       white: string;
     };
     fonts: {
-      //   behance_acumin_pro_black_80: SerializedStyles;
+      head1: SerializedStyles;
+      head2: SerializedStyles;
+      body1: SerializedStyles;
+      question: SerializedStyles;
     };
   }
 }

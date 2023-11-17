@@ -1,13 +1,19 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
+import DescriptionModal from './DescriptionModal';
 import Item from './Item';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 const ItemList = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [curItem, setCurItem] = useState(null);
+
   return (
     <ItemListWrapper>
       {ARCHIVE_DATA.map((item) => (
-        <Item key={String(item.id) + item.name} id={item.id} />
+        <Item key={String(item.id) + item.name} id={item.id} setIsModalOpen={setIsModalOpen} setCurItem={setCurItem} />
       ))}
+      <DescriptionModal isModalOpen={isModalOpen} curItem={curItem} />
     </ItemListWrapper>
   );
 };
