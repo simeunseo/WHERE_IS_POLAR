@@ -18,7 +18,7 @@ body{
     background-color:${({ theme }) => theme.colors.grey10};
     color:${({ theme }) => theme.colors.white};
 
-    /* font-family: Sandoll ClairSans;
-    font-weight: 400; */
+    font-family: Sandoll ClairSans;
+    font-weight: 400;
 }
 `;
