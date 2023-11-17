@@ -13,7 +13,7 @@ const ItemList = () => {
       {ARCHIVE_DATA.map((item) => (
         <Item key={String(item.id) + item.name} id={item.id} setIsModalOpen={setIsModalOpen} setCurItem={setCurItem} />
       ))}
-      <DescriptionModal isModalOpen={isModalOpen} curItem={curItem} />
+      <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
     </ItemListWrapper>
   );
 };

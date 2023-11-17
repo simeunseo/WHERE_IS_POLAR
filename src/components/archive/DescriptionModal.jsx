@@ -1,9 +1,11 @@
+import Asterisk from '../../assets/svg/asterisk.svg?react';
 import styled from 'styled-components';
 
-const DescriptionModal = ({ isModalOpen, curItem }) => {
+const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
   const target = curItem;
   return (
     <DiscriptionModalWrapper $isModalOpen={isModalOpen}>
+      <StyledAsterisk onClick={() => setIsModalOpen(false)} />
       {target && (
         <>
           <Img src={target.img_src} />
@@ -75,18 +77,27 @@ const NameInfo = styled.h1`
   margin-top: 2rem;
 `;
 
-const Article = styled.p``;
+const Article = styled.div``;
 
 const QuestionWrapper = styled.div`
   margin-top: 5rem;
 `;
 
-const Question = styled.p`
+const Question = styled.div`
   ${({ theme }) => theme.fonts.question}
 `;
 
-const Answer = styled.p`
+const Answer = styled.div`
   ${({ theme }) => theme.fonts.body1}
 
   margin-top:2rem;
+`;
+
+const StyledAsterisk = styled(Asterisk)`
+  position: absolute;
+  width: 3rem;
+  top: 0.8rem;
+  left: 2rem;
+
+  cursor: pointer;
 `;
