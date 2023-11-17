@@ -1,5 +1,11 @@
+import ItemList from '../components/archive/ItemList';
+
 const Archive = () => {
-  return <div>Archive</div>;
+  return (
+    <div>
+      <ItemList />
+    </div>
+  );
 };
 
 export default Archive;
