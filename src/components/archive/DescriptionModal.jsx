@@ -19,20 +19,24 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
               <Question>당신의 꿈은 무엇인가요?</Question>
               <Answer>{target.what}</Answer>
             </QuestionWrapper>
-            <QuestionWrapper>
-              <Question>왜 그런 꿈을 꾸게 되었나요?</Question>
-              <Answer>{target.why}</Answer>
-            </QuestionWrapper>
+            {target.why && (
+              <QuestionWrapper>
+                <Question>왜 그런 꿈을 꾸게 되었나요?</Question>
+                <Answer>{target.why}</Answer>
+              </QuestionWrapper>
+            )}
             {target.when && (
               <QuestionWrapper>
                 <Question>언제 그 꿈을 이룰 것 같나요?</Question>
                 <Answer>{target.when}</Answer>
               </QuestionWrapper>
             )}
-            <QuestionWrapper>
-              <Question>그 꿈을 어떻게 이룰 건가요?</Question>
-              <Answer>{target.how}</Answer>
-            </QuestionWrapper>
+            {target.how && (
+              <QuestionWrapper>
+                <Question>그 꿈을 어떻게 이룰 건가요?</Question>
+                <Answer>{target.how}</Answer>
+              </QuestionWrapper>
+            )}
           </Article>
         </>
       )}
