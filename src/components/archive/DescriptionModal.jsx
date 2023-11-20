@@ -71,6 +71,8 @@ const Img = styled.img`
   width: 38rem;
   height: 24rem;
   object-fit: cover;
+
+  border: 0.1rem solid ${({ theme }) => theme.colors.white};
 `;
 
 const NameInfo = styled.h1`
