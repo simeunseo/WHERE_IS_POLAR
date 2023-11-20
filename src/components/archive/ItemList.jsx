@@ -35,6 +35,6 @@ const ItemListWrapper = styled.main`
 
   font-size: 0;
 
-  padding: 0 4rem;
+  padding: 0 10rem;
   padding-bottom: 30rem;
 `;

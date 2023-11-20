@@ -56,7 +56,7 @@ const PhraseWrapper = styled.div`
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
-  width: calc((100% - 23rem) / 4);
+  width: calc((100% - 35rem) / 4);
 
   cursor: pointer;
 

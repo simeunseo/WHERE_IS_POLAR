@@ -20,7 +20,7 @@ const HeaderWrapper = styled.header`
   display: flex;
   justify-content: space-between;
 
-  padding: 5rem;
+  padding: 8rem;
 `;
 
 const Navigation = styled.nav`
