@@ -31,7 +31,7 @@ const ItemListWrapper = styled.main`
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 5rem;
 
   font-size: 0;
 

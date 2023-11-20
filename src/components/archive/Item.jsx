@@ -36,10 +36,11 @@ const Img = styled.img`
 
   filter: grayscale(1);
 
+  cursor: pointer;
+
   transition: all 0.4s;
   &:hover {
     filter: none;
-    cursor: pointer;
   }
 `;
 
@@ -47,13 +48,17 @@ const PhraseWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
 
+  padding: 1rem;
+
   ${({ theme }) => theme.fonts.head1}
 
   position: absolute;
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
-  width: calc((100% - 14rem) / 4);
+  width: calc((100% - 23rem) / 4);
+
+  cursor: pointer;
 
   &:hover {
     position: unset;
@@ -62,8 +67,6 @@ const PhraseWrapper = styled.div`
 
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.grey10};
-
-    cursor: pointer;
   }
 `;
 
