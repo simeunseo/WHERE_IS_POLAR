@@ -93,6 +93,10 @@ const QuestionWrapper = styled.div`
 
 const Question = styled.div`
   ${({ theme }) => theme.fonts.question}
+
+  padding-bottom: 0.5rem;
+
+  border-bottom: solid 0.1rem ${({ theme }) => theme.colors.white};
 `;
 
 const Answer = styled.div`
