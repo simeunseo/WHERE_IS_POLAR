@@ -27,6 +27,7 @@ const ItemWrapper = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  height: 30rem;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
 

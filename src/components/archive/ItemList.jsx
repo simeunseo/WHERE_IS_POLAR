@@ -8,6 +8,12 @@ const ItemList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [curItem, setCurItem] = useState(null);
 
+  const shuffle = (array) => {
+    array.sort(() => Math.random() - 0.5);
+  };
+
+  shuffle(ARCHIVE_DATA);
+
   return (
     <ItemListWrapper>
       {ARCHIVE_DATA.map((item) => (

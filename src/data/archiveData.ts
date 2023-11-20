@@ -24,7 +24,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '5년후요. 현재 오만 무스카트에서 꿈을 말하고 있는데, 5년 후 무스카트의 와디샵에 있을 것 같아요. 디지털 노마드로 일을 하고 있는 제 모습이 상상이 갑니다.',
     how: '끄적거리는 걸 좋아해서, 아이패드스티커를 만들어서 네이버에 팔아봤는데 실제로 팔리는 걸 경험했어요. 1. 휴학해서 제가 하고 있는 일에 더 몰입해보고자 합니다. 2. 책을 많이 읽어보려구요.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/Dz7FQcST/1.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/1.jpg',
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '5년 뒤 28살이면, 남들이 저를 봤을 때 약해보이는게 아니라 단단해보이고 즐거워보이는 사람일 것 같아요.',
     how: '마인드 컨트롤이 가장 중요한 것 같아요. 상황을 볼 때 긍정적으로 보려고 노력할거고 사소한 거 하나를 볼때도 감사해보려고 합니다.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/GmC9NG4M/2.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/2.jpg',
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '지금 이루고 있는 것 같아요.',
     how: '사실 지금 사업을 하고 있어서 제 행복을 찾는 과정에 있다고 생각합니다. 아직 온전한 행복을 다 얻었다고 할 수는 없지만 점점 행복할 것 같아요. 지금 저만의 식당을 열었고, ONLY KICHEN 방식으로 문을 열었습니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/DR8FDpb/3.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/3.jpg',
   },
   {
     id: 4,
@@ -63,7 +63,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/QPbKT1X/4.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/4.jpg',
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '오만에선 점점 축구 팀이 늘어나고 있고, 월드컵 룰도 점점 많은 팀을 뽑고 있기 때문에 곧 할 수 있으리라 믿습니다.',
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/X8RJxBM/5.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/5.jpg',
   },
   {
     id: 6,
@@ -89,7 +89,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '여행을 해야겠죠! 하하. 그러려면 먼저 돈을 모아야겠네요.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/SxfjpR8m/6.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/6.jpg',
   },
   {
     id: 7,
@@ -102,7 +102,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '문화를 어떻게 알릴지 계획을 세우고, 영화를 만들거나의 방법을 생각하고 있어요. (그리고 실제로 그는 나와 한국인 친구들에게 오만의 전통복장 5벌을 선물로 줬다)',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/whYfwz1/7.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/7.jpg',
   },
   {
     id: 8,
@@ -115,7 +115,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '그걸 할 수 있을만한 돈을 벌고 싶어요. 안정적인 수입원이요. 안정적인 직장이나 사업을 생각하고 있고, 그렇다고 해서 일에 치여서 좋아하는게 안생기는 삶은 지양해야할 것 같아서 이 중간에서 균형을 잡아야할 것 같아요.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/rmKpW9Hp/8.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/8.jpg',
   },
   {
     id: 9,
@@ -128,7 +128,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '5년 후에는 행복하고, 제 삶을 원하는 대로 살고 있지 않을까요? 저는 한곳에만 머무르고 싶진 않아요! 움질일거예요.',
     how: '우선 좋은 직장에 들어가서, 꿈을 위한 저축을 하고 가족을 오만으로 데려오고 싶어요. 그리고 오토바이 일주 경로를 좀 상세히 생각해봤는데요. 오만에서부터 시작해서 사우디 아라비아, 이라크, 이란 그다음 내나라 파키스탄이요. 그다음 다시 이란으로 가서 아제르바이젠, 튀르키예를 건너 유럽에 가고 싶어요',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/4tgLxFq/9.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/9.jpg',
   },
   {
     id: 10,
@@ -141,7 +141,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '자격증을 따려고 준비하고 있고, 나의 사업을 안정적으로 만들기 위해, 여러 경험등을 하려고 합니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/jM0CyLS/18.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/18.jpg',
   },
   {
     id: 11,
@@ -154,7 +154,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '그냥 해보는거예요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/d7XMBjS/21.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/11.jpg',
   },
   {
     id: 21,
@@ -167,7 +167,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '5년 후에는 돈을 많이 벌고, 원하는 직업으로 새로운 나라에서 일하고 있을 것 같아요.! Extreemly Happy한 삶을 살고 있길!',
     how: '현재 저는 관련학과에서 공부 중이며, 앞으로 석사까지는 무조건 딸 생각입니다. 그리고 박사과정도 생각하고 있어요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/d7XMBjS/21.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/21.jpg',
   },
   {
     id: 22,
@@ -180,7 +180,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: 'I would take what ever takes. 내게 주어질 모든 것을 할 것이에요! 설령 그게 제 인생 전부를 바쳐야하는 일일지라도요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/m8GLd3B/22.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/22.jpg',
   },
   {
     id: 23,
@@ -193,7 +193,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: 'be strong, Never give up, and keep ng hope. 굳건하게, 포기하지 않고, 희망을 간직하는 것이요. 그러기 위해선 내가 이룬 작은 성공을 당당히 만끽하는 것부터 시작하려고 합니다.',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 24,
@@ -206,7 +206,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: 'Work Hard! 열심히 일하자!',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 26,
@@ -219,7 +219,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 27,
@@ -232,7 +232,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '5년 뒤에는 공인 회계사 공부를 끝내고 기업 재무팀에서 일을 할 것 같아요',
     how: '기업 재무팀에서 일을 하며 꿈을 이루고 싶어요. 돈의 흐름을 볼 수 있다는 점, 그리고 그 과정에서 추후에 저만의 사업을 위한 인사이트를 얻을 수 있다는 점에서 재무팀에서 일하고 싶어요. 재무팀에서 일하기 위해서 지금 생각하는 것은 회계사 공부를 해볼 예정이고, 공부를 해서 합격이 되든 안되든 기업 재무팀의 일원으로 배울 수 있는 기회가 열릴 것 같다고 생각합니다.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/9M3sG6c0/27.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/27.jpg',
   },
   {
     id: 28,
@@ -245,7 +245,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 29,
@@ -258,7 +258,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '편안한 삶을 위해 열심히 일해야겠죠. 하하하. 그치만 다른 점은 저는 목표와 수단이 전치된 삶을 살진 않을거에요. 편안한 삶을 위해, 똑똑하게 일할래요. Work smart, not hard.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/nLs8GwnN/29.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/29.jpg',
   },
   {
     id: 30,
@@ -271,7 +271,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/rcY9WRN/30.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/30.jpg',
   },
   {
     id: 31,
@@ -284,7 +284,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '자주 웃고 크게 웃을겁니다.',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/kX9mPcyt/31.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/31.jpg',
   },
   {
     id: 35,
@@ -297,7 +297,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '제가 자라온 레바논을 떠난 그 어딘가로의 여정이 필요할 것 같아요. 새로운 세상에서의 독립, 안전지대를 벗어나는 경험이 제 꿈을 이루는데 필요한 경험이 될 것 같습니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/ncJcd0S/35.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/35.jpg',
   },
   {
     id: 36,
@@ -310,7 +310,7 @@ export const ARCHIVE_DATA: data[] = [
     why: undefined,
     how: '우선 매일 명상을 해보려고 해요. 나로부터 시작되는 긍정의 힘을 믿습니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/rpKyrx5/36.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/36.jpg',
   },
   {
     id: 37,
@@ -323,7 +323,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '제가 직접 돈을 모아 트럭을 사게 되는 날이요. 제가 제 돈으로 트럭을 산다는 것은, 충분한 경제적 위치를 만들었다는 것이고, 이때야 비로소 부모님께 받은 것들을 다시 돌려드릴 수 있는 상황이 될 것 같습니다.',
     how: '무엇이든, 꿈을 이룰 수 있는 모든 것을요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/RvKKVx2/37.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/37.jpg',
   },
   {
     id: 38,
@@ -336,7 +336,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '해외에서 요리와 관련된 석사학위를 따고, 네트워킹을 하며 자주 카페들을 방문하며 아이디어를 얻고, 영감을 주는 여행을 자주 떠날 예정입니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/0VXdnB5/38.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/38.jpg',
   },
   {
     id: 40,
@@ -349,7 +349,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '제게 일의 주체성이 주어지고 창의성을 발휘할 수 있는 일을 하면서 이룰 수 있을 것 같아요. 예술이나 패션의 영역에서 일을 한다면 꿈을 이룰것 같아요',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/G5c7m7g/40.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/40.jpg',
   },
   {
     id: 42,
@@ -362,7 +362,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '가장 먼저 제가 행복해지는 것이, 모두가 행복한 세상의 시작인 것 같아요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/QfJcNWT/42.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/42.jpg',
   },
   {
     id: 44,
@@ -375,7 +375,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '새로운 세대가 나타나는 날이요. 공존이 가능하다고 믿는 새로운 세대들, 어쩌면 지금의 젊은이들이 그 시작이라고 봅니다.',
     how: '너와 같은 공주를 갖는 것이 내 꿈을 이루는 방법이야. (라고 나에게 말했다.)',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/hm9y9Mg/44.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/44.jpg',
   },
   {
     id: 45,
@@ -388,7 +388,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '직장을 1년 정도 그만둬야할 것 같아요. 그러기 위해서는 돈을 좀 모을 것이고, 그 후 여행을 같이 다닐 누군가와 여행을 하고 다시 프랑스로 돌아와 새로운 일을 구할 거에요',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/8Mb5Kmr/45.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/45.jpg',
   },
   {
     id: 47,
@@ -401,7 +401,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '갖고 있는게 있어야 영향력을 끼칠 수 있을 것 같다라는 생각을 했습니다. 돈과 능력이요. 저는 우선 프리랜서로 일하면서 상세페이지나 웹사이트 디자인을 하는 방향 그리고 라이브커머스 쇼호스트로 일하는 것을 생각하고 있습니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/WPQzsrS/47.png',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/47.png',
   },
   {
     id: 51,
@@ -414,7 +414,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '첫번째로는 언어입니다. 언어 공부를 하고, 그다음 세상을 돌아다닐 수 있는 직업을 고를 것 같아요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/Jzf474x/51.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/51.jpg',
   },
   {
     id: 57,
@@ -427,7 +427,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '40살에 이룰 것 같아요. 지금으로부터 10년 뒤요!',
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/yPnFyWq/57.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/57.jpeg',
   },
   {
     id: 59,
@@ -440,7 +440,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '돈을 기준으로 한다면 미래의 일이 될 것 같지만, 그게 기준이 아니라면 저는 지금 꿈을 이루며 살고 있는 것 같아요.',
     how: '제 영화를 만들기 위해 열심히 돈을 벌고, 대화하면서 그 사람들의 인생을 제것으로 흡수하는 것을 배워나갸아할 것 같아요. 장르는 로맨스, 멜로요!',
     archived_at: '2023',
-    img_src: 'https://i.postimg.cc/JhTNMPJ7/59.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/59.jpg',
   },
   {
     id: 61,
@@ -452,7 +452,7 @@ export const ARCHIVE_DATA: data[] = [
     why: '처음에는 부모님의 조언에 따라 치과대학에 입학했는데, 점차 공부하면 공부할 수록 이 일에 빠져들었어요.',
     how: '더 많이 공부하고, 인내하고, 다양한 상황에서 환자들을 이해하려는 노력을 좀 하고 싶어요. 사람들은 각자 저마다의 상황이 있고, 그 상황들을 이해하는게 필요한 것 같아요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/1mBQJQq/61.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/61.jpg',
   },
   {
     id: 62,
@@ -465,7 +465,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/Bt54Byc/62.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/62.jpeg',
   },
   {
     id: 64,
@@ -478,7 +478,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/LNrhnK4/64.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/64.jpg',
   },
   {
     id: 65,
@@ -491,7 +491,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/mh35dmk/65.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/65.jpeg',
   },
   {
     id: 66,
@@ -504,7 +504,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/0K6NQ5h/67.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/67.jpg',
   },
   {
     id: 68,
@@ -517,7 +517,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/GMmcqzt/68.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/68.jpg',
   },
   {
     id: 69,
@@ -530,7 +530,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/GMmcqzt/68.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/68.jpg',
   },
   {
     id: 70,
@@ -542,7 +542,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 72,
@@ -555,7 +555,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '정확하지는 않지만, 그래도 추측을 하자면,적어도 35살 이전에는 꿈을 이루지 않을까 합니다.',
     how: '우선, 저에게 주어진 한양대라는 환경 속에서 최선을 다해 전공 공부를 하고 틈틈히 대체당 관련 논문을 찾으며, 각 당마다 주어진 장점 단점 등을 찾으려 합니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/gWXNjH2/72.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/72.JPG',
   },
   {
     id: 73,
@@ -568,7 +568,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 75,
@@ -581,7 +581,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: undefined,
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/qxL05ym/75.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/75.JPG',
   },
   {
     id: 76,
@@ -594,7 +594,7 @@ export const ARCHIVE_DATA: data[] = [
     when: undefined,
     how: '다양한 방식이 있겠지만, 우선은 도시 기획의 방향으로 건축의 재미를 사람들이 실생활에서 바로 느끼게 하는데 기여하고 싶어요. 그래서 현재 독일로 교환학생을 다녀오고, 도시기획으로 대학원을 준비하고 있습니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/cF8TBsM/76.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/76.JPG',
   },
   {
     id: 77,
@@ -607,7 +607,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '10-15년 뒤 즈음',
     how: '석사 졸업 / 지역문화와 커뮤니티에 관련된 공부 / 쉬운 글쓰기 공부',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/P6Pkfqd/77.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/77.JPG',
   },
   {
     id: 78,
@@ -620,7 +620,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '2-5년 뒤',
     how: '공부를 꾸준히 하고 실천해 나갈 것입니다.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/fM0KCYh/78.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/78.JPG',
   },
   {
     id: 79,
@@ -633,7 +633,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '이번 겨울이요.',
     how: '우선 미니앨범을 내기 위해서 지금 여러 데모곡들을 만들고 있고, 노래를 다듬고 있어요. 음악으로 세상에게 가치를 인정받는 방법으로는 주변 빈티지 사장님이나 음반 가게 사장님들께 저희의 앨범을 위탁판매하는 것이고, 웨비 옥상에서 공연을 할거예요. 공연은 무료로 진행하지만, 웨비의 공연을 보러 온 사람들이 웨비 샵에서 다양한 소비를 할 수 있으니 이런 방식으로도, 제가 하는 음악의 가치를 인정받을 수 있을 것이라고 생각합니다.',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 81,
@@ -646,7 +646,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '사실 이 꿈은 달성 시점이 없어요. 죽기 직전까지 증명해낼 것이라고 생각합니다. 제 인생의 서사에 관한 꿈이니까요. 그런 점에서 저는 이미 꿈을 이뤄가고 있다고 생각해요.',
     how: '바쁜 일상 속에서  가슴 속 한켠에 취미와 좋아하는 것에 대한 공간을 남겨놓는 것으로서 꿈을 이루고 있습니다.',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 82,
@@ -659,7 +659,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '이룰 수는 있겠지만 언제를 결단하는 것이 어렵다.',
     how: undefined,
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 83,
@@ -672,7 +672,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '30살을 기점으로 이룰 것 같아요.',
     how: '가족과 풍요롭고, 심적으로 여유롭게 살려면 돈을 많이 벌어야 할 것 같아요. 그리고 좋은 가족을 꾸리기 위해서는 제가 먼저 좋은 사람이 되어야 할 것 같아요.',
     archived_at: '2023',
-    img_src: 'https://i.ibb.co/GVx5KLS/83.jpg',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/83.JPG',
   },
   {
     id: 64,
@@ -685,7 +685,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '지금 조금씩 실천하는 중',
     how: '그동안 열심히 살아왔으니까 꿈대로 살아도 되지 않을까',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 85,
@@ -698,7 +698,7 @@ export const ARCHIVE_DATA: data[] = [
     when: '큰 욕심없이 지금 이루어 지고 있습니다.',
     how: '긍정적인 마인드와 소소한 운동',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
   {
     id: 86,
@@ -711,6 +711,6 @@ export const ARCHIVE_DATA: data[] = [
     when: '서른 살',
     how: '워킹 홀리데이로 우선 호주에 가서 내가 정말 일 삶을 좋아하는지 파악해보기',
     archived_at: '2023',
-    img_src: '',
+    img_src: 'https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg',
   },
 ];
