@@ -2,7 +2,7 @@ import { ARCHIVE_DATA } from '../../data/archiveData';
 import DescriptionModal from './DescriptionModal';
 import Item from './Item';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 const ItemList = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,7 +12,9 @@ const ItemList = () => {
     array.sort(() => Math.random() - 0.5);
   };
 
-  shuffle(ARCHIVE_DATA);
+  useMemo(() => {
+    shuffle(ARCHIVE_DATA);
+  }, []);
 
   return (
     <ItemListWrapper>
