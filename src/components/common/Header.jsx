@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom';
 import LogoMain from '../../assets/svg/logo-main.svg?react';
 import styled from 'styled-components';
 import SlidePhrase from './SlidePhrase';
+import { useState } from 'react';
 
 const Header = ({ isModalOpen }) => {
+  const [isLogoClick, setIsLogoClick] = useState(false);
+
   return (
     <HeaderWrapper>
-      <LogoMain />
+      <StyledLogoMain $isLogoClick={isLogoClick} onClick={() => setIsLogoClick(!isLogoClick)} />
       <Navigation $isModalOpen={isModalOpen}>
         <Link to="/archive">
           <CategoryWrapper>
@@ -39,6 +42,18 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
 
   padding: 8rem;
+`;
+
+const StyledLogoMain = styled(LogoMain)`
+  cursor: pointer;
+
+  & > path:first-child {
+    transition: opacity 1s ease-in-out;
+    opacity: ${({ $isLogoClick }) => ($isLogoClick ? '0%' : '100%')};
+  }
+
+  transition: transform 1s ease-in-out;
+  transform: ${({ $isLogoClick }) => ($isLogoClick ? 'translateX(-15rem)' : 'none')};
 `;
 
 const Navigation = styled.nav`

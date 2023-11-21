@@ -47,7 +47,6 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
 export default DescriptionModal;
 
 const DiscriptionModalWrapper = styled.article`
-  /* display: ${({ $isModalOpen }) => ($isModalOpen ? 'flex' : 'none')}; */
   display: flex;
   flex-direction: column;
 
