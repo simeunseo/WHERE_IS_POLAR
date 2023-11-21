@@ -7,7 +7,7 @@ const Archive = () => {
     <>
       <Header />
       <ItemList />
-      <StyledConstellation />
+      {/* <StyledConstellation /> */}
     </>
   );
 };

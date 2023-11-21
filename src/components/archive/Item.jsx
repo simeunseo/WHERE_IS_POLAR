@@ -23,6 +23,19 @@ export default Item;
 const ItemWrapper = styled.div`
   /* width: 30rem; */
   padding-top: 4.2rem;
+
+  cursor: pointer;
+
+  &:hover {
+    img {
+      filter: none;
+    }
+
+    div {
+      background-color: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.grey10};
+    }
+  }
 `;
 
 const Img = styled.img`
@@ -36,12 +49,7 @@ const Img = styled.img`
 
   filter: grayscale(1);
 
-  cursor: pointer;
-
   transition: all 0.4s;
-  &:hover {
-    filter: none;
-  }
 `;
 
 const PhraseWrapper = styled.div`
@@ -52,22 +60,14 @@ const PhraseWrapper = styled.div`
 
   ${({ theme }) => theme.fonts.head1}
 
-  position: absolute;
+  /* position: absolute; */
   overflow: hidden;
-  text-wrap: nowrap;
+  /* text-wrap: nowrap; */
+  text-wrap: wrap;
+
   text-overflow: ellipsis;
-  width: calc((100% - 35rem) / 4);
-
-  cursor: pointer;
-
-  &:hover {
-    position: unset;
-    text-wrap: wrap;
-    width: 100%;
-
-    background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.grey10};
-  }
+  /* width: calc((100% - 35rem) / 4); */
+  width: 100%;
 `;
 
 const Phrase = styled.span``;
