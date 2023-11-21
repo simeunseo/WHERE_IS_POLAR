@@ -40,6 +40,7 @@ const ItemWrapper = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  max-width: 80rem;
   height: 30rem;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
@@ -57,6 +58,8 @@ const PhraseWrapper = styled.div`
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
 
   padding: 1rem;
+
+  max-width: 80rem;
 
   ${({ theme }) => theme.fonts.head1}
 
