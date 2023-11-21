@@ -26,6 +26,7 @@ const Header = () => {
           </CategoryWrapper>
         </Link>
       </Navigation>
+      <MainPhrase>자신의 북극성이 무엇인지 알아내는 일은 심리적, 영적으로 심오한 예술 작업이라 할 수 있다. </MainPhrase>
     </HeaderWrapper>
   );
 };
@@ -44,9 +45,15 @@ const Navigation = styled.nav`
   flex-direction: column;
   justify-content: end;
 
+  width: 32rem;
   position: fixed;
   top: 15rem;
   right: 8rem;
+  z-index: 1;
+
+  border: 0.1rem solid ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.grey10};
+  padding: 0 2rem;
 `;
 
 const Category = styled.h1`
@@ -78,4 +85,21 @@ const CategoryWrapper = styled.div`
       display: none;
     }
   }
+`;
+
+const MainPhrase = styled.aside`
+  position: fixed;
+  top: 0;
+  right: 8rem;
+
+  width: 18rem;
+  height: 100vh;
+
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.grey10};
+  font-size: 10rem;
+  text-align: right;
+
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
 `;
