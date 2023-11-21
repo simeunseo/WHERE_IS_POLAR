@@ -43,9 +43,8 @@ const HeaderWrapper = styled.header`
 const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: end;
 
-  width: 32rem;
+  width: 38rem;
   position: fixed;
   top: 15rem;
   right: 0;
@@ -53,36 +52,42 @@ const Navigation = styled.nav`
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.grey10};
-  padding: 0 2rem;
+  padding: 2rem 4rem;
+  padding-bottom: 4rem;
 `;
 
 const Category = styled.h1`
+  position: absolute;
+
   font-size: 3rem;
 
   text-align: right;
-  /* 
-  &:hover {
-    &::before {
-      content: '*';
-    }
-  } */
 `;
 
 const CategoryEng = styled.h2`
+  position: absolute;
+
   font-size: 3rem;
 
+  transform: translateX(1rem);
+
+  transition: transform 1s;
+
   text-align: right;
-  display: none;
+  opacity: 0%;
 `;
 
 const CategoryWrapper = styled.div`
+  position: relative;
+
   padding: 2.5rem 0;
   &:hover {
     & > h2 {
-      display: block;
+      opacity: 100%;
+      transform: translateX(0rem);
     }
     & > h1 {
-      display: none;
+      opacity: 0%;
     }
   }
 `;
