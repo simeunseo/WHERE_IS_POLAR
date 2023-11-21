@@ -51,7 +51,7 @@ const DiscriptionModalWrapper = styled.article`
   flex-direction: column;
 
   transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : 'translateX(72rem)')};
-  transition: transform 1s ease-in-out;
+  transition: transform 1.3s ease-in-out;
 
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
