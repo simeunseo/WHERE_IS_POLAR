@@ -48,7 +48,7 @@ const Navigation = styled.nav`
   width: 32rem;
   position: fixed;
   top: 15rem;
-  right: 8rem;
+  right: 0;
   z-index: 1;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
@@ -90,16 +90,17 @@ const CategoryWrapper = styled.div`
 const MainPhrase = styled.aside`
   position: fixed;
   top: 0;
-  right: 8rem;
+  right: 0;
 
-  width: 18rem;
+  width: 14rem;
   height: 100vh;
 
   background-color: ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.grey10};
-  font-size: 10rem;
+  font-size: 8rem;
   text-align: right;
 
   writing-mode: vertical-rl;
   text-orientation: sideways;
+  overflow: hidden;
 `;
