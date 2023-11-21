@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import GuidingLine from '../assets/svg/안내점선.svg?react';
 import Asterisk from '../assets/svg/asterisk.svg?react';
+import { Link } from 'react-router-dom';
 
 const Gate = () => {
   const [input, setInput] = useState('');
@@ -10,7 +11,9 @@ const Gate = () => {
     <GateWrapper>
       <GuidingHeader>
         <StyledGuidingLine active={input !== ''} />
-        <StyledAsterisk active={input !== ''} />
+        <StyledLink to="/archive" active={input !== ''}>
+          <StyledAsterisk active={input !== ''} />
+        </StyledLink>
       </GuidingHeader>
       <StyledTextArea
         rows={10}
@@ -52,8 +55,13 @@ const StyledGuidingLine = styled(GuidingLine)`
   }
 `;
 
+const StyledLink = styled(Link)`
+  pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
+`;
+
 const StyledAsterisk = styled(Asterisk)`
   margin: 0 3rem;
+
 
   & > * {
     transition: fill 3s;
