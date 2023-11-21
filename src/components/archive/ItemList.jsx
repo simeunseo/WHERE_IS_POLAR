@@ -70,12 +70,13 @@ const ItemListWrapper = styled.main`
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
 
   font-size: 0;
 
   padding: 0 10rem;
   padding-bottom: 30rem;
+  padding-right: 40rem;
 `;
 
 const StyledDashedLine1 = styled(DashedLine1)`

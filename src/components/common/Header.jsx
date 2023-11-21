@@ -28,6 +28,10 @@ const Navigation = styled.nav`
   flex-direction: column;
   gap: 5rem;
   justify-content: end;
+
+  position: fixed;
+  top: 18rem;
+  right: 8rem;
 `;
 
 const Category = styled.h1`
