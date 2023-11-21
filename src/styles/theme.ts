@@ -3,6 +3,7 @@ import { DefaultTheme, css } from 'styled-components';
 const colors = {
   //   behance_blue: '#2456f7',
   grey10: '#221F20',
+  grey8: '#565652',
   white: '#FFFFFF',
 };
 

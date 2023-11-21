@@ -5,6 +5,7 @@ declare module 'styled-components' {
     colors: {
       grey10: string;
       white: string;
+      grey8: string;
     };
     fonts: {
       head1: SerializedStyles;
