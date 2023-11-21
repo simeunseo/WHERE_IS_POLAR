@@ -57,6 +57,7 @@ const DiscriptionModalWrapper = styled.article`
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 2;
 
   width: 40%;
   height: 100%;
