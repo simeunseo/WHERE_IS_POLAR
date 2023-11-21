@@ -20,6 +20,7 @@ const fonts = {
   `,
   question: css`
     font-size: 1.6rem;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
   `,
 };
