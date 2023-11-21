@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import LogoMain from '../../assets/svg/logo-main.svg?react';
 import styled from 'styled-components';
+import SlidePhrase from './SlidePhrase';
 
 const Header = () => {
   return (
@@ -26,7 +27,8 @@ const Header = () => {
           </CategoryWrapper>
         </Link>
       </Navigation>
-      <MainPhrase>자신의 북극성이 무엇인지 알아내는 일은 심리적, 영적으로 심오한 예술 작업이라 할 수 있다. </MainPhrase>
+      <SlidePhrase />
+      {/* <MainPhrase>자신의 북극성이 무엇인지 알아내는 일은 심리적, 영적으로 심오한 예술 작업이라 할 수 있다. </MainPhrase> */}
     </HeaderWrapper>
   );
 };
