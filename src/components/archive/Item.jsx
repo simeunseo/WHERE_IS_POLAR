@@ -59,7 +59,7 @@ const PhraseWrapper = styled.div`
 
   padding: 1rem;
 
-  max-width: 80rem;
+  max-width: 70rem;
 
   ${({ theme }) => theme.fonts.head1}
 
