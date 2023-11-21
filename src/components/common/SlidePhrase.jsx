@@ -48,6 +48,8 @@ const SlidePhrase = () => {
 export default SlidePhrase;
 
 const SlidePhraseWrapper = styled.aside`
+  z-index: 3;
+
   position: fixed;
   top: 0;
   right: 0;

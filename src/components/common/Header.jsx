@@ -3,11 +3,11 @@ import LogoMain from '../../assets/svg/logo-main.svg?react';
 import styled from 'styled-components';
 import SlidePhrase from './SlidePhrase';
 
-const Header = () => {
+const Header = ({ isModalOpen }) => {
   return (
     <HeaderWrapper>
       <LogoMain />
-      <Navigation>
+      <Navigation $isModalOpen={isModalOpen}>
         <Link to="/archive">
           <CategoryWrapper>
             <Category>인류의 꿈을 보관합니다</Category>
@@ -28,7 +28,6 @@ const Header = () => {
         </Link>
       </Navigation>
       <SlidePhrase />
-      {/* <MainPhrase>자신의 북극성이 무엇인지 알아내는 일은 심리적, 영적으로 심오한 예술 작업이라 할 수 있다. </MainPhrase> */}
     </HeaderWrapper>
   );
 };
@@ -43,6 +42,9 @@ const HeaderWrapper = styled.header`
 `;
 
 const Navigation = styled.nav`
+  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'translateX(38rem)' : 'none')};
+  transition: transform 1s ease-in-out;
+
   display: flex;
   flex-direction: column;
 
@@ -50,7 +52,7 @@ const Navigation = styled.nav`
   position: fixed;
   top: 15rem;
   right: 0;
-  z-index: 1;
+  z-index: 4;
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.grey10};
@@ -92,22 +94,4 @@ const CategoryWrapper = styled.div`
       opacity: 0%;
     }
   }
-`;
-
-const MainPhrase = styled.aside`
-  position: fixed;
-  top: 0;
-  right: 0;
-
-  width: 14rem;
-  height: 100vh;
-
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.grey10};
-  font-size: 8rem;
-  text-align: right;
-
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  overflow: hidden;
 `;

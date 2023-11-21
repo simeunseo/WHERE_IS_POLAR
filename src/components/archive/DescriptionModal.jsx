@@ -47,15 +47,19 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
 export default DescriptionModal;
 
 const DiscriptionModalWrapper = styled.article`
-  display: ${({ $isModalOpen }) => ($isModalOpen ? 'flex' : 'none')};
+  /* display: ${({ $isModalOpen }) => ($isModalOpen ? 'flex' : 'none')}; */
+  display: flex;
   flex-direction: column;
+
+  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : 'translateX(72rem)')};
+  transition: transform 1s ease-in-out;
 
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   border-bottom: none;
 
   position: fixed;
-  right: 18rem;
+  right: 14rem;
   top: 0;
   z-index: 2;
 

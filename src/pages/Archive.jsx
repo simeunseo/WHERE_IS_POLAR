@@ -2,11 +2,13 @@ import Constellation from '../assets/svg/constellation.svg?react';
 import Header from '../components/common/Header';
 import ItemList from '../components/archive/ItemList';
 import styled from 'styled-components';
+import { useState } from 'react';
 const Archive = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <Header />
-      <ItemList />
+      <Header isModalOpen={isModalOpen} />
+      <ItemList isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       {/* <StyledConstellation /> */}
     </>
   );

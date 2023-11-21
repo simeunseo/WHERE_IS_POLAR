@@ -11,8 +11,7 @@ import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
 import DashedLine4 from '../../assets/svg/상향대각점선.svg?react';
 import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
 
-const ItemList = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [curItem, setCurItem] = useState(null);
 
   const shuffle = (array) => {
