@@ -64,7 +64,7 @@ const DiscriptionModalWrapper = styled.article`
   padding: 3rem;
   padding-top: 9rem;
 
-  overflow-y: scroll;
+  overflow-y: hidden;
 `;
 
 const Img = styled.img`
@@ -82,10 +82,12 @@ const NameInfo = styled.h1`
   padding: 0.6rem 0.8rem;
 
   ${({ theme }) => theme.fonts.question}
-  margin-top: 2rem;
+  margin: 2rem 0;
 `;
 
-const Article = styled.div``;
+const Article = styled.div`
+  overflow-y: scroll;
+`;
 
 const QuestionWrapper = styled.div`
   margin-top: 5rem;
