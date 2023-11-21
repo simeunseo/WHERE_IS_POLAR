@@ -27,18 +27,30 @@ const ItemList = () => {
     StyledDashedLine5,
   ];
 
-  let randomNum = useRef();
+  const getRandomIdxList = (n) => {
+    const maxNum = 4;
+
+    const result = [];
+    for (let i = 0; i < n; i++) {
+      const randomNum = Math.floor(Math.random() * (maxNum + 1));
+      result.push(randomNum);
+    }
+
+    return result;
+  };
+
+  const randomIdxList = useRef();
 
   useMemo(() => {
     shuffle(ARCHIVE_DATA);
-    randomNum.current = Math.floor(Math.random() * dashedLineList.length);
+    randomIdxList.current = getRandomIdxList(ARCHIVE_DATA.length);
   }, []);
 
   return (
     <ItemListWrapper>
-      {ARCHIVE_DATA.map((item) => (
+      {ARCHIVE_DATA.map((item, idx) => (
         <>
-          {React.createElement(dashedLineList[randomNum.current])}
+          {React.createElement(dashedLineList[randomIdxList.current[idx]])}
           <Item
             key={String(item.id) + item.name}
             id={item.id}
