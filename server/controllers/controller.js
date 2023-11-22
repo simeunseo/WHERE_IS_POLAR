@@ -15,8 +15,17 @@ const getAllMessages = async (req, res, next) => {
 };
 
 const addMessage = async (req, res, next) => {
-  const { dream, why, when, what, location, nameAge, email, deepInterview } =
-    req.body;
+  const {
+    dream,
+    why,
+    when,
+    what,
+    location,
+    nameAge,
+    email,
+    deepInterview,
+    imgSrc,
+  } = req.body;
   let message;
   try {
     message = new Message({
