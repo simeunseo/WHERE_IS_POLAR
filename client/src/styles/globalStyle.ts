@@ -28,6 +28,7 @@ input[type='number']::-webkit-outer-spin-button {
             appearance: none;
 }
 
+
 #root, body, html {
     width:100%;
     height: 100vh;

@@ -91,6 +91,10 @@ const NameInfo = styled.h1`
 
 const Article = styled.div`
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const QuestionWrapper = styled.div`
