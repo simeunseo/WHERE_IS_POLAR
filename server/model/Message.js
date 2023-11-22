@@ -46,6 +46,10 @@ const messageSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  imgSrc: {
+    type: String,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model("Message", messageSchema);
