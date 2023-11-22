@@ -51,8 +51,6 @@ const StyledConfirmBtn = styled.button`
   border: none;
   width: 20rem;
   height: 5rem;
-
-  margin-bottom: 10rem;
   border-radius: 5rem;
 `;
 

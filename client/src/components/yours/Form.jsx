@@ -14,34 +14,6 @@ const Form = () => {
   const [deepInterview, setDeepInterview] = useState(true);
   const [imgSrc, setImgSrc] = useState('');
 
-  const handleDreamChange = (e) => {
-    setDream(e.target.value);
-  };
-
-  const handleWhyChange = (e) => {
-    setWhy(e.target.value);
-  };
-
-  const handleWhenChange = (e) => {
-    setWhen(e.target.value);
-  };
-
-  const handleWhatChange = (e) => {
-    setWhat(e.target.value);
-  };
-
-  const handleLocationChange = (e) => {
-    setLocation(e.target.value);
-  };
-
-  const handleNameAgeChange = (e) => {
-    setNameAge(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handleDeepInterviewChange = (e) => {
     setDeepInterview(e.target.id === 'yes' ? true : false);
   };
@@ -51,93 +23,107 @@ const Form = () => {
   };
 
   return (
-    <StyledForm>
-      <Question>당신의 꿈은 무엇인가요? * 필수</Question>
-      <BodySub>
-        꿈을 정의하기 힘들다면, 당신이 쫓는 북극성을 생각해보거나, 죽기 전에 이루 싶은 것, 삶의 모습, 소원 등을
-        생각해보세요
-      </BodySub>
-      <TextArea placeholder="작성해 주세요" value={dream} onChange={handleDreamChange}></TextArea>
-      <Question>그 이유는 무엇인가요?</Question>
-      <TextArea placeholder="작성해 주세요" value={why} onChange={handleWhyChange}></TextArea>
-      <Question>언제 그 꿈을 이룰 것 같은가요?</Question>
-      <TextArea placeholder="작성해 주세요" value={when} onChange={handleWhenChange}></TextArea>
-      <Question>꿈을 이루기 위해 무엇을 할 것인가요?</Question>
-      <TextArea placeholder="작성해 주세요" value={what} onChange={handleWhatChange}></TextArea>
-      {/* <Divider></Divider> */}
-      <Question>당신의 이름과 만나이를 알려주세요. * 필수</Question>
-      <BodySub>
-        익명을 원하신다면 닉네임이나 별명을 적어주세요. <br />
-        ex) 조은진, 23세
-      </BodySub>
-      <TextArea placeholder="작성해 주세요" value={nameAge} onChange={handleNameAgeChange}></TextArea>
-      <Question>당신이 사는 곳을 알려주세요. * 필수</Question>
-      <BodySub>ex) 대한민국 제주도, 캐나다 몬트리올</BodySub>
-      <TextArea placeholder="작성해 주세요" value={location} onChange={handleLocationChange}></TextArea>
-      <Question>당신의 이메일을 알려주세요. * 필수</Question>
-      <BodySub>이메일을 적어주시면 1년 주기로 당신의 여정을 묻고, 그 과정을 웹페이지에 반영합니다. </BodySub>
-      <TextArea placeholder="작성해 주세요" value={email} onChange={handleEmailChange}></TextArea>
-      <Question>당신의 꿈 이야기를 조금 더 자세하게 들려줄 수 있나요? * 필수</Question>
-      <BodySub>잡지와 같은 인터뷰 형식으로 취재할 예정입니다.</BodySub>
-      <StyledFormContainer>
-        <div>
-          <label htmlFor="yes">좋아요!</label>
-          <input
-            type="radio"
-            name="deepInterview"
-            value="yes"
-            id="yes"
-            checked={deepInterview === true}
-            onChange={handleDeepInterviewChange}
+    <FormWrapper>
+      <DreamQuestionWrapper>
+        <Question>당신의 꿈은 무엇인가요?</Question>
+        <BodySub>
+          꿈을 정의하기 힘들다면, 당신이 쫓는 북극성을 생각해보거나, 죽기 전에 이루고 싶은 것, 삶의 모습, 소원 등을
+          생각해보세요
+        </BodySub>
+        <TextArea
+          placeholder="✑"
+          value={dream}
+          onChange={(e) => {
+            setDream(e.target.value);
+          }}></TextArea>
+        <Question>그 이유는 무엇인가요?</Question>
+        <TextArea placeholder="✑" value={why} onChange={(e) => setWhy(e.target.value)}></TextArea>
+        <Question>언제 그 꿈을 이룰 것 같은가요?</Question>
+        <TextArea placeholder="✑" value={when} onChange={(e) => setWhen(e.target.value)}></TextArea>
+        <Question>꿈을 이루기 위해 무엇을 할 것인가요?</Question>
+        <TextArea placeholder="✑" value={what} onChange={(e) => setWhat(e.target.value)}></TextArea>
+      </DreamQuestionWrapper>
+      <InfoQuestionWrapper>
+        <Question>당신의 이름과 만나이를 알려주세요.</Question>
+        <BodySub>익명을 원하신다면 닉네임이나 별명을 적어주세요. ex) 조은진, 23세</BodySub>
+        <TextArea placeholder="✑" value={nameAge} onChange={(e) => setNameAge(e.target.value)}></TextArea>
+        <Question>당신이 사는 곳을 알려주세요.</Question>
+        <BodySub>ex) 대한민국 제주도, 캐나다 몬트리올</BodySub>
+        <TextArea placeholder="✑" value={location} onChange={(e) => setLocation(e.target.value)}></TextArea>
+        <Question>당신의 이메일을 알려주세요.</Question>
+        <BodySub>이메일을 적어주시면 1년 주기로 당신의 여정을 묻고, 그 과정을 웹페이지에 반영합니다. </BodySub>
+        <TextArea placeholder="✑" value={email} onChange={(e) => setEmail(e.target.value)}></TextArea>
+        <Question>당신의 꿈 이야기를 조금 더 자세하게 들려줄 수 있나요?</Question>
+        <BodySub>인터뷰 형식으로 취재를 요청드리려 합니다.</BodySub>
+
+        <StyledFormContainer>
+          <>
+            <StyledLabel htmlFor="yes">좋아요!</StyledLabel>
+            <StyedInput
+              type="radio"
+              name="deepInterview"
+              value="yes"
+              id="yes"
+              checked={deepInterview === true}
+              onChange={handleDeepInterviewChange}
+            />
+          </>
+          <>
+            <StyledLabel htmlFor="no">아닙니다.</StyledLabel>
+            <StyedInput
+              type="radio"
+              name="deepInterview"
+              value="no"
+              id="no"
+              checked={deepInterview === false}
+              onChange={handleDeepInterviewChange}
+            />
+          </>
+        </StyledFormContainer>
+        {/* <BtnWrapper>
+          <FormConfirmBtn
+            dream={dream}
+            why={why}
+            when={when}
+            what={what}
+            location={location}
+            nameAge={nameAge}
+            email={email}
+            deepInterview={deepInterview}
+            imgSrc={imgSrc}
           />
-        </div>
-        <div>
-          <label htmlFor="no">아닙니다.</label>
-          <input
-            type="radio"
-            name="deepInterview"
-            value="no"
-            id="no"
-            checked={deepInterview === false}
-            onChange={handleDeepInterviewChange}
-          />
-        </div>
-        <div>
-          <WebcamCapture handleImgSrcChange={handleImgSrcChange} />
-        </div>
-      </StyledFormContainer>
-      <BtnWrapper>
-        {/* <DeclineBtn /> */}
-        <FormConfirmBtn
-          dream={dream}
-          why={why}
-          when={when}
-          what={what}
-          location={location}
-          nameAge={nameAge}
-          email={email}
-          deepInterview={deepInterview}
-          imgSrc={imgSrc}
-        />
-      </BtnWrapper>
-    </StyledForm>
+        </BtnWrapper> */}
+      </InfoQuestionWrapper>
+      <WebcamCaptureWrapper>
+        <Question>꿈꾸는 얼굴을 남겨주세요.</Question>
+        <WebcamCapture handleImgSrcChange={handleImgSrcChange} />
+        <WebcamSubText>사진을 남기고 싶지 않다면 이 텍스트를 눌러주세요.</WebcamSubText>
+      </WebcamCaptureWrapper>
+    </FormWrapper>
   );
 };
 
 export default Form;
 
-const StyledForm = styled.form`
-  margin-top: 10rem;
+const FormWrapper = styled.main`
+  display: flex;
+  position: relative;
 `;
+
 const TextArea = styled.textarea`
-  margin-bottom: 5rem;
+  color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => theme.fonts.head2}
+
+  &:not(&:last-child) {
+    margin-bottom: 5rem;
+  }
+
   margin-top: 2rem;
 
   background-color: transparent;
-  padding: 0;
-  line-height: 1.5rem;
-
+  padding: 0.4rem;
   width: 100%;
+  height: 4rem;
 
   border: none;
   border-bottom: 0.1rem solid white;
@@ -150,23 +136,27 @@ const TextArea = styled.textarea`
     outline: none;
   }
   &::placeholder {
+    color: ${({ theme }) => theme.colors.grey8};
   }
 `;
 const BtnWrapper = styled.div`
   display: flex;
   justify-content: center;
 
-  margin-top: 4rem;
+  margin-top: 10rem;
 `;
 
-const Question = styled.h2``;
+const Question = styled.h2`
+  ${({ theme }) => theme.fonts.question2};
+`;
 
 const BodySub = styled.p`
+  ${({ theme }) => theme.fonts.body1}
+  color: ${({ theme }) => theme.colors.grey8};
+
   text-align: left;
 
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  line-height: 1.5rem;
+  margin-top: 2rem;
 `;
 
 const StyledFormContainer = styled.form`
@@ -174,4 +164,60 @@ const StyledFormContainer = styled.form`
 
   display: flex;
   gap: 1rem;
+`;
+
+const DreamQuestionWrapper = styled.div`
+  position: absolute;
+  left: -0.1rem;
+  padding: 10rem;
+  margin-top: 5rem;
+  height: 80.3rem;
+  border: 1px solid ${({ theme }) => theme.colors.white};
+`;
+
+const InfoQuestionWrapper = styled.div`
+  position: absolute;
+  right: 13.9rem;
+  top: 90.3rem;
+  height: 92.3rem;
+  padding: 10rem;
+  border: 1px solid ${({ theme }) => theme.colors.white};
+`;
+
+const WebcamCaptureWrapper = styled.div`
+  position: absolute;
+  top: 187.5rem;
+  left: -0.1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10rem;
+  border: 1px solid ${({ theme }) => theme.colors.white};
+`;
+
+const StyedInput = styled.input`
+  appearance: auto;
+
+  width: 2rem;
+`;
+
+const StyledLabel = styled.label`
+  color: ${({ theme }) => theme.colors.white};
+  ${({ theme }) => theme.fonts.head2}
+`;
+
+const WebcamSubText = styled.p`
+  ${({ theme }) => theme.fonts.body1}
+  color: ${({ theme }) => theme.colors.grey8};
+  width: max-content;
+
+  text-align: left;
+
+  margin-top: 2rem;
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;

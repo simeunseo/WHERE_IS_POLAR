@@ -9,17 +9,25 @@ const colors = {
 
 const fonts = {
   head1: css`
+    font-family: Sandoll ClairSans;
     font-size: 4rem;
   `,
   head2: css`
+    font-family: Sandoll ClairSans;
     font-size: 2rem;
   `,
   body1: css`
+    font-family: Sandoll ClairSans;
     font-size: 1.6rem;
     line-height: 2.3rem;
   `,
-  question: css`
+  question1: css`
     font-size: 1.6rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+  `,
+  question2: css`
+    font-size: 3rem;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
   `,

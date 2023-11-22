@@ -85,7 +85,7 @@ const NameInfo = styled.h1`
   width: fit-content;
   padding: 0.6rem 0.8rem;
 
-  ${({ theme }) => theme.fonts.question}
+  ${({ theme }) => theme.fonts.question1}
   margin: 2rem 0;
 `;
 
@@ -102,7 +102,7 @@ const QuestionWrapper = styled.div`
 `;
 
 const Question = styled.div`
-  ${({ theme }) => theme.fonts.question}
+  ${({ theme }) => theme.fonts.question1}
 
   padding-bottom: 0.5rem;
 `;

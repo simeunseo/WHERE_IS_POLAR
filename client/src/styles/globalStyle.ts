@@ -44,7 +44,7 @@ body{
     background-color:${({ theme }) => theme.colors.grey10};
     color:${({ theme }) => theme.colors.white};
 
-    font-family: Sandoll ClairSans;
+    font-family: Sandoll ClairSans, -apple-system, system-ui,  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
 }
 `;

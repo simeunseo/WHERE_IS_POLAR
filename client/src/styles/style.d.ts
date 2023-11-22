@@ -11,7 +11,8 @@ declare module 'styled-components' {
       head1: SerializedStyles;
       head2: SerializedStyles;
       body1: SerializedStyles;
-      question: SerializedStyles;
+      question1: SerializedStyles;
+      question2: SerializedStyles;
     };
   }
 }
