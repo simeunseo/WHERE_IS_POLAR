@@ -1,10 +1,12 @@
 import Form from '../components/yours/Form';
+import Header from '../components/common/Header';
 
 const Yours = () => {
   return (
-    <div>
+    <>
+      <Header />
       <Form />
-    </div>
+    </>
   );
 };
 
