@@ -28,6 +28,7 @@ const addMessage = async (req, res, next) => {
       nameAge,
       email,
       deepInterview,
+      imgSrc,
     });
     await message.save();
   } catch (err) {
