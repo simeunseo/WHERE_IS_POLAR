@@ -1,9 +1,9 @@
-import WebcamCapture from '../components/yours/WebcamCapture';
+import Form from '../components/yours/Form';
 
 const Yours = () => {
   return (
     <div>
-      <WebcamCapture />
+      <Form />
     </div>
   );
 };
