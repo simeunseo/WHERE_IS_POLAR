@@ -50,7 +50,7 @@ const DiscriptionModalWrapper = styled.article`
   display: flex;
   flex-direction: column;
 
-  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : 'translateX(72rem)')};
+  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : 'translateX(84rem)')};
   transition: transform 1.3s ease-in-out;
 
   background-color: ${({ theme }) => theme.colors.grey10};
@@ -62,7 +62,7 @@ const DiscriptionModalWrapper = styled.article`
   top: 0;
   z-index: 2;
 
-  width: 40%;
+  width: 70rem;
   height: 100%;
 
   padding: 3rem;
