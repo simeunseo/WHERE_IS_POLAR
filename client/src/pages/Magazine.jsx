@@ -1,20 +1,27 @@
 import React from 'react';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Magazine = () => {
   return (
     <>
       <Header />
       <MagazineList>
-        <MagazineTitleContainer>
-          <MagazineTitle1>반스신는 아저씨가 되는 것 / 취향은 일상의 영역이다 / Gate keeper / 8:2의 법칙</MagazineTitle1>
-          <MagazineDate1>23.11.12</MagazineDate1>
-        </MagazineTitleContainer>
-        <MagazineTitleContainer>
-          <MagazineTitle2>그래서 얼마 버는데? / 관성의 힘을 믿는다 / 좋아하는 일로 돈 벌기</MagazineTitle2>
-          <MagazineDate2>23.11.24</MagazineDate2>
-        </MagazineTitleContainer>
+        <Link to="/magazine/1">
+          <MagazineTitleContainer>
+            <MagazineTitle1>
+              반스신는 아저씨가 되는 것 / 취향은 일상의 영역이다 / Gate keeper / 8:2의 법칙
+            </MagazineTitle1>
+            <MagazineDate1>23.11.12</MagazineDate1>
+          </MagazineTitleContainer>
+        </Link>
+        <Link to="/magazine/2">
+          <MagazineTitleContainer>
+            <MagazineTitle2>그래서 얼마 버는데? / 관성의 힘을 믿는다 / 좋아하는 일로 돈 벌기</MagazineTitle2>
+            <MagazineDate2>23.11.24</MagazineDate2>
+          </MagazineTitleContainer>
+        </Link>
       </MagazineList>
     </>
   );
