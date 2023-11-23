@@ -2,7 +2,7 @@ import { ARCHIVE_DATA } from '../../data/archiveData';
 import styled from 'styled-components';
 
 const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
-  const target = archivedData.find((item) => item.id === id);
+  const target = archivedData.find((item) => item._id === id);
 
   const handleItemClick = () => {
     setIsModalOpen(true);
@@ -10,8 +10,8 @@ const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
   };
   return (
     <ItemWrapper onClick={handleItemClick}>
-      {target.img_src ? (
-        <Img src={target.img_src} alt={target.name} />
+      {target.imgSrc ? (
+        <Img src={target.imgSrc} alt={target.name} />
       ) : (
         <Img src="https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg" alt="no-image" />
       )}

@@ -38,12 +38,11 @@ const Form = () => {
       why: why,
       when: when,
       how: what,
-      archived_at: '2023',
+      archivedAt: '2023',
       imgSrc: imgSrc,
       email: email,
       deepInterview: deepInterview,
     });
-    navigate('/archive');
   };
 
   return (
@@ -112,9 +111,11 @@ const Form = () => {
         <BodySub>모든 입력을 마치면, 우측의 별을 눌러 제출해 주세요.</BodySub>
       </WebcamCaptureWrapper>
 
-      <GuidingHeaderWrapper onClick={handleFormSubmit}>
-        <GuidingHeader isCompleted={isFilled} />
-      </GuidingHeaderWrapper>
+      <a href="/archive" onClick={handleFormSubmit}>
+        <GuidingHeaderWrapper>
+          <GuidingHeader isCompleted={isFilled} />
+        </GuidingHeaderWrapper>
+      </a>
     </FormWrapper>
   );
 };

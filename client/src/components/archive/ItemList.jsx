@@ -32,14 +32,13 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   }, []);
 
   useEffect(() => {
+    console.log('allData 갱신');
     if (data) {
-      const parsedData = data.filter((item, idx) => idx > 42);
-      setArchivedData([...ARCHIVE_DATA, ...parsedData]);
+      const allData = ARCHIVE_DATA.concat(data);
+      setArchivedData(allData);
     }
   }, [data]);
 
-  // const archiveData = ARCHIVE_DATA.push(data.filter((item, idx) => idx >= 41));
-  // console.log(archiveData);
   const [curItem, setCurItem] = useState(null);
 
   const shuffle = (array) => {
@@ -71,7 +70,6 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   useMemo(() => {
     shuffle(archivedData);
     randomIdxList.current = getRandomIdxList(archivedData.length);
-    // console.log(archivedData);
   }, [archivedData]);
 
   return (
@@ -80,10 +78,11 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
         archivedData.map((item, idx) => (
           <>
             {React.createElement(dashedLineList[randomIdxList.current[idx]])}
+            <span>{item.name}</span>
             <Item
               archivedData={archivedData}
-              key={String(item.id) + item.name}
-              id={item.id}
+              key={String(item._id) + item.name}
+              id={item._id}
               setIsModalOpen={setIsModalOpen}
               setCurItem={setCurItem}
             />

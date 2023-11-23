@@ -8,11 +8,11 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
       <StyledAsterisk onClick={() => setIsModalOpen(false)} />
       {target && (
         <>
-          <Img src={target.img_src} />
+          <Img src={target.imgSrc} />
           <NameInfo>
             {target.name}
             {target.age && ', ' + target.age + '세'}
-            {', ' + target.country}
+            {target.country && ', ' + target.country}
           </NameInfo>
           <Article>
             <QuestionWrapper>
