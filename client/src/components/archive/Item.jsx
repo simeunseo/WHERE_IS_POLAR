@@ -1,8 +1,8 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
 import styled from 'styled-components';
 
-const Item = ({ id, setIsModalOpen, setCurItem }) => {
-  const target = ARCHIVE_DATA.find((item) => item.id === id);
+const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
+  const target = archivedData.find((item) => item.id === id);
 
   const handleItemClick = () => {
     setIsModalOpen(true);
@@ -10,7 +10,12 @@ const Item = ({ id, setIsModalOpen, setCurItem }) => {
   };
   return (
     <ItemWrapper onClick={handleItemClick}>
-      <Img src={target.img_src} alt={target.name} />
+      {target.img_src ? (
+        <Img src={target.img_src} alt={target.name} />
+      ) : (
+        <Img src="https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg" alt="no-image" />
+      )}
+
       <PhraseWrapper>
         <Phrase>{target.phrase}</Phrase>
       </PhraseWrapper>

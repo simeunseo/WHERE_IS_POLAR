@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import FormConfirmBtn from './FormConfirmBtn';
+
 import WebcamCapture from './WebcamCapture';
+
+import GuidingHeader from '../gate/GuidingHeader';
+import { useNavigate } from 'react-router-dom';
+import createMessage from '../../apis/create';
 
 const Form = () => {
   const [dream, setDream] = useState('');
@@ -20,6 +24,26 @@ const Form = () => {
 
   const handleImgSrcChange = (url) => {
     setImgSrc(url);
+  };
+
+  const isFilled = dream && nameAge && imgSrc;
+
+  const navigate = useNavigate();
+  const handleFormSubmit = () => {
+    createMessage({
+      name: nameAge,
+      country: location,
+      phrase: dream,
+      what: dream,
+      why: why,
+      when: when,
+      how: what,
+      archived_at: '2023',
+      imgSrc: imgSrc,
+      email: email,
+      deepInterview: deepInterview,
+    });
+    navigate('/archive');
   };
 
   return (
@@ -80,25 +104,17 @@ const Form = () => {
             />
           </>
         </StyledFormContainer>
-        {/* <BtnWrapper>
-          <FormConfirmBtn
-            dream={dream}
-            why={why}
-            when={when}
-            what={what}
-            location={location}
-            nameAge={nameAge}
-            email={email}
-            deepInterview={deepInterview}
-            imgSrc={imgSrc}
-          />
-        </BtnWrapper> */}
       </InfoQuestionWrapper>
       <WebcamCaptureWrapper>
-        <Question>꿈꾸는 얼굴을 남겨주세요.</Question>
+        <Question>사진을 남겨주세요.</Question>
+        <BodySub>당신과 관련된 물건을 촬영해도 좋습니다.</BodySub>
         <WebcamCapture handleImgSrcChange={handleImgSrcChange} />
-        <WebcamSubText>사진을 남기고 싶지 않다면 이 텍스트를 눌러주세요.</WebcamSubText>
+        <BodySub>모든 입력을 마치면, 우측의 별을 눌러 제출해 주세요.</BodySub>
       </WebcamCaptureWrapper>
+
+      <GuidingHeaderWrapper onClick={handleFormSubmit}>
+        <GuidingHeader isCompleted={isFilled} />
+      </GuidingHeaderWrapper>
     </FormWrapper>
   );
 };
@@ -194,6 +210,9 @@ const WebcamCaptureWrapper = styled.div`
 
   padding: 10rem;
   border: 1px solid ${({ theme }) => theme.colors.white};
+
+  background-color: ${({ theme }) => theme.colors.grey10};
+  z-index: 1;
 `;
 
 const StyedInput = styled.input`
@@ -220,4 +239,10 @@ const WebcamSubText = styled.p`
     cursor: pointer;
     color: ${({ theme }) => theme.colors.white};
   }
+`;
+
+const GuidingHeaderWrapper = styled.div`
+  position: absolute;
+  top: 233rem;
+  right: 25rem;
 `;

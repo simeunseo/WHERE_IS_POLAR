@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import GuidingLine from '../assets/svg/안내점선.svg?react';
-import Asterisk from '../assets/svg/asterisk.svg?react';
-import { Link } from 'react-router-dom';
-
+import GuidingHeader from '../components/gate/GuidingHeader';
 const Gate = () => {
   const [input, setInput] = useState('');
 
   return (
     <GateWrapper>
-      <GuidingHeader>
-        <StyledGuidingLine active={input !== ''} />
-        <StyledLink to="/archive" active={input !== ''}>
-          <StyledAsterisk active={input !== ''} />
-        </StyledLink>
-      </GuidingHeader>
+      <GuidingHeader isCompleted={input !== ''} />
+
       <StyledTextArea
         rows={10}
         cols={50}
@@ -35,53 +28,6 @@ const GateWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-const GuidingHeader = styled.header`
-  width: 100%;
-  margin: 5rem 0;
-
-  display: flex;
-  align-items: center;
-`;
-
-const StyledGuidingLine = styled(GuidingLine)`
-  width: 100%;
-  overflow: hidden;
-
-  & > * {
-    transition: fill 2s;
-    fill: ${({ theme, active }) => (active ? theme.colors.white : theme.colors.grey8)};
-  }
-`;
-
-const StyledLink = styled(Link)`
-  pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
-`;
-
-const StyledAsterisk = styled(Asterisk)`
-  margin: 0 3rem;
-
-
-  & > * {
-    transition: fill 3s;
-    fill: ${({ theme, active }) => (active ? theme.colors.white : theme.colors.grey8)};
-  }
-
-  & > path {
-    animation: ${({ active }) => active && 'changeColor 2s infinite'}; 
-  }
-
-  @keyframes changeColor {
-    0% {
-      fill: ${({ theme }) => theme.colors.grey8};
-    }
-    70% {
-      fill: ${({ theme }) => theme.colors.white};
-    }
-    100% {
-      fill: ${({ theme }) => theme.colors.grey8};
-    }
 `;
 
 const StyledTextArea = styled.textarea`

@@ -1,10 +1,11 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
 import DescriptionModal from './DescriptionModal';
 import Item from './Item';
+import getMessage from '../../apis/get.js';
 import styled from 'styled-components';
 import { useMemo, useRef, useState } from 'react';
 import React from 'react';
-
+import { useEffect } from 'react';
 import DashedLine1 from '../../assets/svg/점선.svg?react';
 import DashedLine2 from '../../assets/svg/이중점선.svg?react';
 import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
@@ -12,10 +13,37 @@ import DashedLine4 from '../../assets/svg/상향대각점선.svg?react';
 import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
+  const [data, setData] = useState('');
+  const [archivedData, setArchivedData] = useState('');
+
+  const getMessages = async () => {
+    try {
+      const {
+        data: { messages },
+      } = await getMessage();
+      setData(messages);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getMessages();
+  }, []);
+
+  useEffect(() => {
+    if (data) {
+      const parsedData = data.filter((item, idx) => idx > 42);
+      setArchivedData([...ARCHIVE_DATA, ...parsedData]);
+    }
+  }, [data]);
+
+  // const archiveData = ARCHIVE_DATA.push(data.filter((item, idx) => idx >= 41));
+  // console.log(archiveData);
   const [curItem, setCurItem] = useState(null);
 
   const shuffle = (array) => {
-    array.sort(() => Math.random() - 0.5);
+    array && array.sort(() => Math.random() - 0.5);
   };
 
   const dashedLineList = [
@@ -41,23 +69,26 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const randomIdxList = useRef();
 
   useMemo(() => {
-    shuffle(ARCHIVE_DATA);
-    randomIdxList.current = getRandomIdxList(ARCHIVE_DATA.length);
-  }, []);
+    shuffle(archivedData);
+    randomIdxList.current = getRandomIdxList(archivedData.length);
+    // console.log(archivedData);
+  }, [archivedData]);
 
   return (
     <ItemListWrapper>
-      {ARCHIVE_DATA.map((item, idx) => (
-        <>
-          {React.createElement(dashedLineList[randomIdxList.current[idx]])}
-          <Item
-            key={String(item.id) + item.name}
-            id={item.id}
-            setIsModalOpen={setIsModalOpen}
-            setCurItem={setCurItem}
-          />
-        </>
-      ))}
+      {archivedData &&
+        archivedData.map((item, idx) => (
+          <>
+            {React.createElement(dashedLineList[randomIdxList.current[idx]])}
+            <Item
+              archivedData={archivedData}
+              key={String(item.id) + item.name}
+              id={item.id}
+              setIsModalOpen={setIsModalOpen}
+              setCurItem={setCurItem}
+            />
+          </>
+        ))}
       <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
     </ItemListWrapper>
   );
