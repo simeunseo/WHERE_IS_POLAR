@@ -10,6 +10,7 @@ declare module 'styled-components' {
     fonts: {
       head1: SerializedStyles;
       head2: SerializedStyles;
+      head3: SerializedStyles;
       body1: SerializedStyles;
       question1: SerializedStyles;
       question2: SerializedStyles;

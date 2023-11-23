@@ -16,6 +16,10 @@ const fonts = {
     font-family: Sandoll ClairSans;
     font-size: 2rem;
   `,
+  head3: css`
+    font-family: Sandoll ClairSans;
+    font-size: 3rem;
+  `,
   body1: css`
     font-family: Sandoll ClairSans;
     font-size: 1.6rem;
