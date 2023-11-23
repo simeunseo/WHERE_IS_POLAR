@@ -29,20 +29,25 @@ const Form = () => {
   const isFilled = dream && nameAge && imgSrc;
 
   const navigate = useNavigate();
-  const handleFormSubmit = () => {
-    createMessage({
-      name: nameAge,
-      country: location,
-      phrase: dream,
-      what: dream,
-      why: why,
-      when: when,
-      how: what,
-      archivedAt: '2023',
-      imgSrc: imgSrc,
-      email: email,
-      deepInterview: deepInterview,
-    });
+  const handleFormSubmit = async () => {
+    try {
+      createMessage({
+        name: nameAge,
+        country: location,
+        phrase: dream,
+        what: dream,
+        why: why,
+        when: when,
+        how: what,
+        archivedAt: '2023',
+        imgSrc: imgSrc,
+        email: email,
+        deepInterview: deepInterview,
+      });
+      window.onload.reload();
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

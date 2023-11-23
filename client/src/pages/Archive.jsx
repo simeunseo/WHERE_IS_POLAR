@@ -4,6 +4,7 @@ import ItemList from '../components/archive/ItemList';
 import { useState } from 'react';
 const Archive = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <Header isModalOpen={isModalOpen} />
