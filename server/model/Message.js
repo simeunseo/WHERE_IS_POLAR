@@ -14,7 +14,19 @@ const Schema = mongoose.Schema;
 // });
 
 const messageSchema = new Schema({
-  dream: {
+  name: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  phrase: {
+    type: String,
+    required: true,
+  },
+  what: {
     type: String,
     required: true,
   },
@@ -26,18 +38,19 @@ const messageSchema = new Schema({
     type: String,
     required: false,
   },
-  what: {
+  how: {
     type: String,
     required: false,
   },
-  location: {
+  archived_at: {
     type: String,
     required: true,
   },
-  nameAge: {
+  imgSrc: {
     type: String,
-    required: true,
+    required: false,
   },
+
   email: {
     type: String,
     required: true,
@@ -45,10 +58,6 @@ const messageSchema = new Schema({
   deepInterview: {
     type: Boolean,
     required: true,
-  },
-  imgSrc: {
-    type: String,
-    required: false,
   },
 });
 

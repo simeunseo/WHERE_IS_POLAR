@@ -16,28 +16,32 @@ const getAllMessages = async (req, res, next) => {
 
 const addMessage = async (req, res, next) => {
   const {
-    dream,
+    name,
+    country,
+    phrase,
+    what,
     why,
     when,
-    what,
-    location,
-    nameAge,
+    how,
+    archived_at,
+    imgSrc,
     email,
     deepInterview,
-    imgSrc,
   } = req.body;
   let message;
   try {
     message = new Message({
-      dream,
+      name,
+      country,
+      phrase,
+      what,
       why,
       when,
-      what,
-      location,
-      nameAge,
+      how,
+      archived_at,
+      imgSrc,
       email,
       deepInterview,
-      imgSrc,
     });
     await message.save();
   } catch (err) {
