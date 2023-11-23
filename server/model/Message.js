@@ -20,7 +20,7 @@ const messageSchema = new Schema({
   },
   country: {
     type: String,
-    required: true,
+    required: false,
   },
   phrase: {
     type: String,
@@ -42,7 +42,7 @@ const messageSchema = new Schema({
     type: String,
     required: false,
   },
-  archived_at: {
+  archivedAt: {
     type: String,
     required: true,
   },
@@ -50,10 +50,9 @@ const messageSchema = new Schema({
     type: String,
     required: false,
   },
-
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   deepInterview: {
     type: Boolean,
