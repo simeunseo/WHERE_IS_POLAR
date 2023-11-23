@@ -1,7 +1,11 @@
 import React from 'react';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
-import 웨비1 from '/public/웨비1.jpeg';
+import 웨비1 from '/웨비1.jpeg';
+import 웨비2 from '/웨비2.jpeg';
+import 웨비3 from '/웨비3.jpeg';
+import 웨비4 from '/웨비4.jpeg';
+import 웨비5 from '/웨비5.jpg';
 
 const Magazine2 = () => {
   return (
@@ -37,7 +41,7 @@ const Magazine2 = () => {
           <br />
           나는 그냥 아무 말도 하지 않고 <br />
           내가 하던 일을 하며 노트북만 응시했다. <br />
-          <StyledImg src="/public/웨비1.jpeg" />
+          <StyledImg src={웨비1} />
           <br />
           <br />
           M은 괜스레 다른 농담들을 건네곤 자리를 떴는데,
@@ -86,7 +90,7 @@ const Magazine2 = () => {
           <br />
           믿을 건 젊음뿐이라고 시작한 패기 어린 일들은, 젊음이 사라지고 난 다음에 어떻게 되는 거지? 등등..
           <br />
-          <StyledImg src="/public/웨비2.jpeg" />
+          <StyledImg src={웨비2} />
           <br />
           <br />
           그러나
@@ -130,7 +134,7 @@ const Magazine2 = () => {
           <br />
           '나'에서 시작된 관성에 따르는 사장님의 삶을 믿는다. <br />
           '나'에서 답을 찾고, '나'로 인생을 사려고 하는, 결국 '내'가 좋아하는 일을 하게 되는 그의 관성을 말이다. <br />
-          <StyledImg src="/public/웨비3.jpeg" />
+          <StyledImg src={웨비3} />
           <br />
           <br />
           그러면서 한편으로는 전문성에 대해 생각을 한다. <br />
@@ -152,7 +156,7 @@ const Magazine2 = () => {
           그의 '좋아하는 것'은 '전문성'의 영역에 다다랐고, <br />
           그 전문성이 곧, 사장님이 덜컥 사업을 시작할 수 있게 한 깡이자 자신감이 된 것은 아닌지 생각한다.
           <br />
-          <StyledImg src="/public/웨비5.jpeg" /> <br /> <br />
+          <StyledImg src={웨비5} /> <br /> <br />
           아무튼 다시 돌아와서 <br />
           좋아하는 일로 돈 벌기와 그래서 얼마 버는데?의 얘기로 다시 접근해서. <br /> <br />
           나의 결론은, <br />
@@ -218,7 +222,7 @@ const Magazine2 = () => {
           <br />
           <br />
           좋아하는 일 하면 가난하게 산다는 것도 사회의 편견이야. <br />
-          <StyledImg src="/public/웨비4.jpeg" />
+          <StyledImg src={웨비4} />
           <br />
           <br />
           아무래도 어렸을 때부터 읽어온 개미와 베짱이 이야기가 우리의 뇌에 단단히 박혀있는 듯하다.

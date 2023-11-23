@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
+import 동헌1 from '/동헌1.jpeg';
+import 동헌2 from '/동헌2.jpg';
+import 동헌4 from '/동헌4.jpeg';
 
 const Magazine1 = () => {
   return (
@@ -21,7 +24,7 @@ const Magazine1 = () => {
           그 여유가 있다는 것은 내가 내 삶을 건강하게 가꿔가고 있다는 것.
           <br />
           ​동헌은 우리게 여유와 취향의 상관 관계를, 그리고 취향있는 삶을 알려줬다.
-          <StyledImg src="/public/동헌1.jpeg" alt="바닷가에서 카메라를 든 동헌의 모습" />
+          <StyledImg src={동헌1} alt="바닷가에서 카메라를 든 동헌의 모습" />
           0.
           <br />
           동헌은 이런 사람이다. <br />
@@ -41,7 +44,7 @@ const Magazine1 = () => {
           <br />
           자신의 삶에 취향을 가득가득 묻히고 다니는 그가 부러웠고, <br />
           켜켜히 쌓여진 취향의 깊이도 부러웠다. <br />
-          <StyledImg src="/public/동헌2.jpg" alt="바닷가를 바라보는 동헌의 뒷모습" />
+          <StyledImg src={동헌2} alt="바닷가를 바라보는 동헌의 뒷모습" />
           <br />
           <br />
           1. <br />
@@ -156,7 +159,7 @@ const Magazine1 = () => {
           전문가의 영역으로 들어서는 취향깊이를 갖기까지
           <br />
           동헌은 애써 일상에서 20만큼을 본인을 위해 빼두었다.
-          <StyledImg src="/public/동헌4.jpeg" alt="부산 서점거리" />
+          <StyledImg src={동헌4} alt="부산 서점거리" />
           <br />
           <br />
           5. <br />
