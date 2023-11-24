@@ -8,6 +8,7 @@ import Magazine from './pages/Magazine';
 import Magazine1 from './pages/Magazine1';
 import Magazine2 from './pages/Magazine2';
 import ScrollToTop from './utils/scrollToTop';
+
 const Router = () => {
   return (
     <BrowserRouter>
