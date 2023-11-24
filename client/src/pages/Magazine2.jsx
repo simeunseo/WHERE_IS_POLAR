@@ -263,6 +263,7 @@ const Magazine2 = () => {
           <br />
           '나'에서 출발해, '자신'이 좋아하는 일을 하며 사는 사람들은, 선구자다. <br />
           21세기의 선구자들이 앞장 선 모든 길들에 대해 진심이 담긴 감사와 응원을 전한다. <br />
+          <Small>Editor. 조은진</Small>
         </Article>
       </ArticleBox>
     </Magazine2Wrapper>

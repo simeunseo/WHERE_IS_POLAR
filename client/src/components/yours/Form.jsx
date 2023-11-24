@@ -116,8 +116,8 @@ const Form = () => {
         <BodySub>모든 입력을 마치면, 우측의 별을 눌러 제출해 주세요.</BodySub>
       </WebcamCaptureWrapper>
 
-      <a href="/archive" onClick={handleFormSubmit}>
-        <GuidingHeaderWrapper>
+      <a href="/archive">
+        <GuidingHeaderWrapper onClick={handleFormSubmit}>
           <GuidingHeader isCompleted={isFilled} />
         </GuidingHeaderWrapper>
       </a>
