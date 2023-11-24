@@ -7,22 +7,20 @@ import Yours from './pages/Yours';
 import Magazine from './pages/Magazine';
 import Magazine1 from './pages/Magazine1';
 import Magazine2 from './pages/Magazine2';
-import ScrollToTop from './utils/scrollToTop';
+// import ScrollToTop from './utils/scrollToTop';
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <ScrollToTop>
-        <Routes>
-          <Route path="/" element={<Root />} />
-          <Route path="/gate" element={<Gate />} />
-          <Route path="/archive" element={<Archive />} />
-          <Route path="/yours" element={<Yours />} />
-          <Route path="/magazine" element={<Magazine />} />
-          <Route path="/magazine/1" element={<Magazine1 />} />
-          <Route path="/magazine/2" element={<Magazine2 />} />
-        </Routes>
-      </ScrollToTop>
+      <Routes>
+        <Route path="/" element={<Root />} />
+        <Route path="/gate" element={<Gate />} />
+        <Route path="/archive" element={<Archive />} />
+        <Route path="/yours" element={<Yours />} />
+        <Route path="/magazine" element={<Magazine />} />
+        <Route path="/magazine/1" element={<Magazine1 />} />
+        <Route path="/magazine/2" element={<Magazine2 />} />
+      </Routes>
     </BrowserRouter>
   );
 };
