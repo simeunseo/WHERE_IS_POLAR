@@ -11,9 +11,9 @@ const Root = () => {
   return (
     <GateWrapper onMouseMove={(e) => setXY({ x: e.clientX, y: e.clientY })}>
       <LogoMain />
-      <Link to="/gate">
+      <StyledLink to="/gate">
         <StyledAsterisk />
-      </Link>
+      </StyledLink>
       <MouseOnText $xy={xy}>반짝이는 북극성을 좇아보세요</MouseOnText>
     </GateWrapper>
   );
@@ -82,4 +82,10 @@ const MouseOnText = styled.aside`
   top: ${({ $xy }) => `${$xy.y + 20}px`};
 
   width: max-content;
+`;
+
+const StyledLink = styled(Link)`
+  &:hover + aside {
+    display: none;
+  }
 `;
