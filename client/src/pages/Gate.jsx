@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import GuidingHeader from '../components/gate/GuidingHeader';
+import getRandomQuestion from '../utils/getRandomQuestion';
+
 const Gate = () => {
   const [input, setInput] = useState('');
 
@@ -11,7 +13,7 @@ const Gate = () => {
       <StyledTextArea
         rows={10}
         cols={50}
-        placeholder="죽기 전에&#13;하고 싶은 일이&#13;있나요?"
+        placeholder={getRandomQuestion()}
         value={input}
         onChange={(e) => {
           setInput(e.target.value);

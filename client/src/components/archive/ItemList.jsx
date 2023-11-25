@@ -12,6 +12,7 @@ import DashedLine2 from '../../assets/svg/이중점선.svg?react';
 import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
 import DashedLine4 from '../../assets/svg/상향대각점선.svg?react';
 import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
+import getRandomQuestion from '../../utils/getRandomQuestion.js';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
@@ -70,7 +71,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   };
 
   const randomIdxList = useRef(); //랜덤한 점선을 선택하기 위한 인덱스 리스트
-  const randomQuestion = QUESTION_LIST[Math.floor(Math.random() * (QUESTION_LIST.length + 1))];
+  const randomQuestion = getRandomQuestion();
 
   useMemo(() => {
     shuffle(archivedData);
