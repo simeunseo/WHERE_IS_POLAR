@@ -5,12 +5,20 @@ const getAllMessages = async (req, res, next) => {
   try {
     messages = await Message.find();
   } catch (err) {
-    console.log(err);
+    console.error(err);
+    return res.status(500).json({ message: "Internal Server Error" });
   }
 
-  if (!messages) {
+  if (!messages || messages.length === 0) {
     return res.status(404).json({ message: "No messages found" });
   }
+
+  // Fisher-Yates shuffle
+  for (let i = messages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [messages[i], messages[j]] = [messages[j], messages[i]];
+  }
+
   return res.status(200).json({ messages });
 };
 
