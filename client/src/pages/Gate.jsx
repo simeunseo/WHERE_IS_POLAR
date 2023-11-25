@@ -26,7 +26,7 @@ const Gate = () => {
         }}
       />
       <MouseOnText $xy={xy} $active={input !== ''}>
-        입력해보세요
+        생각나는대로 적어봐요
       </MouseOnText>
     </GateWrapper>
   );

@@ -1,10 +1,17 @@
+import { useContext } from 'react';
 import Asterisk from '../../assets/svg/asterisk.svg?react';
 import styled from 'styled-components';
+import MouseContext from '../contexts/MouseContext';
 
 const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
+  const { xy, setXY } = useContext(MouseContext);
+
   const target = curItem;
   return (
-    <DiscriptionModalWrapper $isModalOpen={isModalOpen}>
+    <DiscriptionModalWrapper
+      $isModalOpen={isModalOpen}
+      onClick={() => setIsModalOpen(false)}
+      onMouseMove={(e) => setXY({ x: e.clientX, y: e.clientY })}>
       <StyledAsterisk onClick={() => setIsModalOpen(false)} />
       {target && (
         <>
@@ -37,6 +44,7 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
                 <Answer>{target.how}</Answer>
               </QuestionWrapper>
             )}
+            {/* <MouseOnText $xy={xy}>닫기</MouseOnText> */}
           </Article>
         </>
       )}
@@ -120,4 +128,16 @@ const StyledAsterisk = styled(Asterisk)`
   left: 2rem;
 
   cursor: pointer;
+`;
+
+const MouseOnText = styled.aside`
+  padding: 0.7rem 1rem;
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.grey10};
+
+  ${({ theme }) => theme.fonts.body1}
+  position: absolute;
+  left: ${({ $xy }) => `${$xy.x}px`};
+  top: ${({ $xy }) => `${$xy.y}px`};
+  z-index: 100;
 `;
