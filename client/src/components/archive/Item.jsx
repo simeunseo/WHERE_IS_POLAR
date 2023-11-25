@@ -1,7 +1,8 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
 import styled from 'styled-components';
+import { forwardRef } from 'react';
 
-const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
+const Item = forwardRef(function Item({ archivedData, id, setIsModalOpen, setCurItem }, ref) {
   const target = archivedData.find((item) => item._id === id);
 
   const handleItemClick = () => {
@@ -9,7 +10,7 @@ const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
     setCurItem(target);
   };
   return (
-    <ItemWrapper onClick={handleItemClick}>
+    <ItemWrapper onClick={handleItemClick} ref={ref}>
       {target.imgSrc ? (
         <Img src={target.imgSrc} alt={target.name} />
       ) : (
@@ -21,7 +22,7 @@ const Item = ({ archivedData, id, setIsModalOpen, setCurItem }) => {
       </PhraseWrapper>
     </ItemWrapper>
   );
-};
+});
 
 export default Item;
 

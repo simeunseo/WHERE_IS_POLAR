@@ -1,5 +1,3 @@
-import { ARCHIVE_DATA } from '../../data/archiveData';
-import { QUESTION_LIST } from '../../data/questionList';
 import DescriptionModal from './DescriptionModal';
 import Item from './Item';
 import getMessage from '../../apis/get.js';
@@ -13,10 +11,17 @@ import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
 import DashedLine4 from '../../assets/svg/상향대각점선.svg?react';
 import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
 import getRandomQuestion from '../../utils/getRandomQuestion.js';
+import { useContext } from 'react';
+import RecentPost from '../contexts/RecentPost.jsx';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  //현재 선택된 item
+  const [curItem, setCurItem] = useState(null);
+
+  const { recentPost, setRecentPost } = useContext(RecentPost);
 
   //message list api 통신
   const getMessages = async () => {
@@ -24,7 +29,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
       const {
         data: { messages },
       } = await getMessage();
-      console.log(messages);
+      console.log('원본 데이터', messages);
       setData(messages);
     } catch (e) {
       console.log(e);
@@ -38,13 +43,6 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
       getMessages();
     }, 500);
   }, []);
-
-  //현재 선택된 item
-  const [curItem, setCurItem] = useState(null);
-
-  const shuffle = (array) => {
-    array && array.sort(() => Math.random() - 0.5);
-  };
 
   const dashedLineList = [
     StyledDashedLine1,
@@ -68,10 +66,26 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
 
   useMemo(() => {
     if (data) {
-      shuffle(data);
       randomIdxList.current = getRandomIdxList(data.length, 4);
     }
   }, [data]);
+
+  // 생성된 포스트로 스크롤
+  const postRefs = useRef([]);
+
+  const scrollToPost = () => {
+    const target = postRefs.current.find((item) => item.id === recentPost);
+    console.log('target: ', target);
+    if (target) {
+      target.element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  if (!isLoading) {
+    setTimeout(() => {
+      scrollToPost();
+    }, 500);
+  }
 
   return (
     <>
@@ -84,8 +98,9 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
               <React.Fragment key={`fragment-${idx}`}>
                 {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
                 <Item
+                  ref={(el) => (postRefs.current[idx] = { id: item.name + item.phrase, element: el })}
                   archivedData={data}
-                  key={String(item._id) + item.name}
+                  key={String(item._id)}
                   id={item._id}
                   setIsModalOpen={setIsModalOpen}
                   setCurItem={setCurItem}
