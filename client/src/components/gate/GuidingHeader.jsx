@@ -7,9 +7,9 @@ import styled from 'styled-components';
 const GuidingHeader = ({ isCompleted }) => {
   return (
     <GuidingHeaderWrapper>
-      <StyledGuidingLine active={isCompleted} />
-      <StyledLink to="/archive" active={isCompleted}>
-        <StyledAsterisk active={isCompleted} />
+      <StyledGuidingLine $active={isCompleted} />
+      <StyledLink to="/archive" $active={isCompleted}>
+        <StyledAsterisk $active={isCompleted} />
       </StyledLink>
     </GuidingHeaderWrapper>
   );
@@ -29,12 +29,12 @@ const StyledGuidingLine = styled(GuidingLine)`
 
   & > * {
     transition: fill 2s;
-    fill: ${({ theme, active }) => (active ? theme.colors.white : theme.colors.grey8)};
+    fill: ${({ theme, $active }) => ($active ? theme.colors.white : theme.colors.grey8)};
   }
 `;
 
 const StyledLink = styled(Link)`
-  pointer-events: ${({ active }) => (active ? 'auto' : 'none')};
+  pointer-events: ${({ $active }) => ($active ? 'auto' : 'none')};
 `;
 
 const StyledAsterisk = styled(Asterisk)`
@@ -43,7 +43,7 @@ const StyledAsterisk = styled(Asterisk)`
 
   & > * {
     transition: fill 3s;
-    fill: ${({ theme, active }) => (active ? theme.colors.white : theme.colors.grey8)};
+    fill: ${({ theme, $active }) => ($active ? theme.colors.white : theme.colors.grey8)};
   }
 
   & > path {
