@@ -16,16 +16,15 @@ import getRandomQuestion from '../../utils/getRandomQuestion.js';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
-  const [archivedData, setArchivedData] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   //message list api 통신
   const getMessages = async () => {
     try {
-      setIsLoading(true);
       const {
         data: { messages },
       } = await getMessage();
+      console.log(messages);
       setData(messages);
     } catch (e) {
       console.log(e);
@@ -34,17 +33,11 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   };
 
   useEffect(() => {
-    getMessages();
+    setIsLoading(true);
+    setTimeout(() => {
+      getMessages();
+    }, 500);
   }, []);
-
-  //상수 데이터와 서버 데이터 합치기
-  useEffect(() => {
-    console.log(data);
-    if (data) {
-      const allData = ARCHIVE_DATA.concat(data);
-      setArchivedData(allData);
-    }
-  }, [data]);
 
   //현재 선택된 item
   const [curItem, setCurItem] = useState(null);
@@ -74,9 +67,11 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const randomQuestion = getRandomQuestion();
 
   useMemo(() => {
-    shuffle(archivedData);
-    randomIdxList.current = getRandomIdxList(archivedData.length, 4);
-  }, [archivedData]);
+    if (data) {
+      shuffle(data);
+      randomIdxList.current = getRandomIdxList(data.length, 4);
+    }
+  }, [data]);
 
   return (
     <>
@@ -84,12 +79,12 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
         <QuestionWrapper>{randomQuestion}</QuestionWrapper>
       ) : (
         <ItemListWrapper>
-          {archivedData &&
-            archivedData.map((item, idx) => (
+          {data &&
+            data.map((item, idx) => (
               <React.Fragment key={`fragment-${idx}`}>
                 {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
                 <Item
-                  archivedData={archivedData}
+                  archivedData={data}
                   key={String(item._id) + item.name}
                   id={item._id}
                   setIsModalOpen={setIsModalOpen}
