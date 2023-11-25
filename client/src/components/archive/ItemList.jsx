@@ -13,6 +13,7 @@ import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
 import getRandomQuestion from '../../utils/getRandomQuestion.js';
 import { useContext } from 'react';
 import RecentPost from '../contexts/RecentPost.jsx';
+import MouseContext from '../contexts/MouseContext.jsx';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
@@ -29,7 +30,6 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
       const {
         data: { messages },
       } = await getMessage();
-      console.log('원본 데이터', messages);
       setData(messages);
     } catch (e) {
       console.log(e);
@@ -75,7 +75,6 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
 
   const scrollToPost = () => {
     const target = postRefs.current.find((item) => item.id === recentPost);
-    console.log('target: ', target);
     if (target) {
       target.element.scrollIntoView({ behavior: 'smooth' });
     }
