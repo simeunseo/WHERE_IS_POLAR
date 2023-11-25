@@ -1,4 +1,5 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
+import { QUESTION_LIST } from '../../data/questionList';
 import DescriptionModal from './DescriptionModal';
 import Item from './Item';
 import getMessage from '../../apis/get.js';
@@ -15,9 +16,12 @@ import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
   const [archivedData, setArchivedData] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
+  //message list api 통신
   const getMessages = async () => {
     try {
+      setIsLoading(true);
       const {
         data: { messages },
       } = await getMessage();
@@ -25,12 +29,14 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     } catch (e) {
       console.log(e);
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {
     getMessages();
   }, []);
 
+  //상수 데이터와 서버 데이터 합치기
   useEffect(() => {
     console.log(data);
     if (data) {
@@ -39,6 +45,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     }
   }, [data]);
 
+  //현재 선택된 item
   const [curItem, setCurItem] = useState(null);
 
   const shuffle = (array) => {
@@ -53,46 +60,64 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     StyledDashedLine5,
   ];
 
-  const getRandomIdxList = (n) => {
-    const maxNum = 4;
-
+  const getRandomIdxList = (listLength, maxNum) => {
     const result = [];
-    for (let i = 0; i < n; i++) {
+    for (let i = 0; i < listLength; i++) {
       const randomNum = Math.floor(Math.random() * (maxNum + 1));
       result.push(randomNum);
     }
-
     return result;
   };
 
-  const randomIdxList = useRef();
+  const randomIdxList = useRef(); //랜덤한 점선을 선택하기 위한 인덱스 리스트
+  const randomQuestion = QUESTION_LIST[Math.floor(Math.random() * (QUESTION_LIST.length + 1))];
 
   useMemo(() => {
     shuffle(archivedData);
-    randomIdxList.current = getRandomIdxList(archivedData.length);
+    randomIdxList.current = getRandomIdxList(archivedData.length, 4);
   }, [archivedData]);
 
   return (
-    <ItemListWrapper>
-      {archivedData &&
-        archivedData.map((item, idx) => (
-          <React.Fragment key={`fragment-${idx}`}>
-            {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
-            <Item
-              archivedData={archivedData}
-              key={String(item._id) + item.name}
-              id={item._id}
-              setIsModalOpen={setIsModalOpen}
-              setCurItem={setCurItem}
-            />
-          </React.Fragment>
-        ))}
-      <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
-    </ItemListWrapper>
+    <>
+      {isLoading ? (
+        <QuestionWrapper>{randomQuestion}</QuestionWrapper>
+      ) : (
+        <ItemListWrapper>
+          {archivedData &&
+            archivedData.map((item, idx) => (
+              <React.Fragment key={`fragment-${idx}`}>
+                {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
+                <Item
+                  archivedData={archivedData}
+                  key={String(item._id) + item.name}
+                  id={item._id}
+                  setIsModalOpen={setIsModalOpen}
+                  setCurItem={setCurItem}
+                />
+              </React.Fragment>
+            ))}
+          <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
+        </ItemListWrapper>
+      )}
+    </>
   );
 };
 
 export default ItemList;
+
+const QuestionWrapper = styled.aside`
+  width: 100%;
+  height: 30rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-right: 14rem;
+
+  ${({ theme }) => theme.fonts.head1}
+  color: ${({ theme }) => theme.colors.grey8}
+`;
 
 const ItemListWrapper = styled.main`
   width: 100%;
