@@ -63,7 +63,7 @@ const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
 
-  width: 38rem;
+  width: 45rem;
   position: fixed;
   top: 15rem;
   right: 0;
@@ -71,7 +71,7 @@ const Navigation = styled.nav`
 
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.grey10};
-  padding: 2rem 4rem;
+  padding: 2rem 5rem;
   padding-bottom: 4rem;
 `;
 
@@ -99,7 +99,7 @@ const CategoryEng = styled.h2`
 const CategoryWrapper = styled.div`
   position: relative;
 
-  padding: 2.5rem 0;
+  padding: 4rem 0;
   &:hover {
     & > h2 {
       opacity: 100%;

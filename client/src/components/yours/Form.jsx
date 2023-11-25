@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import WebcamCapture from './WebcamCapture';
 
 import GuidingHeader from '../gate/GuidingHeader';
-import { useNavigate } from 'react-router-dom';
+
 import createMessage from '../../apis/create';
 
 const Form = () => {
@@ -17,6 +17,21 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [deepInterview, setDeepInterview] = useState(true);
   const [imgSrc, setImgSrc] = useState('');
+
+  const scrollFirst = useRef(null);
+  const scrollToFirst = () => {
+    scrollFirst.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollSecond = useRef(null);
+  const scrollToSecond = () => {
+    scrollSecond.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollThird = useRef(null);
+  const scrollToThird = () => {
+    scrollThird.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const handleDeepInterviewChange = (e) => {
     setDeepInterview(e.target.id === 'yes' ? true : false);
@@ -64,21 +79,33 @@ const Form = () => {
           }}></TextArea>
         <Question>그 이유는 무엇인가요?</Question>
         <TextArea placeholder="✑" value={why} onChange={(e) => setWhy(e.target.value)}></TextArea>
-        <Question>언제 그 꿈을 이룰 것 같은가요?</Question>
+        <Question ref={scrollFirst}>언제 그 꿈을 이룰 것 같은가요?</Question>
         <TextArea placeholder="✑" value={when} onChange={(e) => setWhen(e.target.value)}></TextArea>
         <Question>꿈을 이루기 위해 무엇을 할 것인가요?</Question>
-        <TextArea placeholder="✑" value={what} onChange={(e) => setWhat(e.target.value)}></TextArea>
+        <TextArea
+          onFocus={scrollToFirst}
+          placeholder="✑"
+          value={what}
+          onChange={(e) => setWhat(e.target.value)}></TextArea>
       </DreamQuestionWrapper>
-      <InfoQuestionWrapper>
+      <InfoQuestionWrapper ref={scrollSecond}>
         <Question>당신의 이름과 만나이를 알려주세요.</Question>
         <BodySub>익명을 원하신다면 닉네임이나 별명을 적어주세요. ex) 조은진, 23세</BodySub>
-        <TextArea placeholder="✑" value={nameAge} onChange={(e) => setNameAge(e.target.value)}></TextArea>
-        <Question>당신이 사는 곳을 알려주세요.</Question>
+        <TextArea
+          onFocus={scrollToSecond}
+          placeholder="✑"
+          value={nameAge}
+          onChange={(e) => setNameAge(e.target.value)}></TextArea>
+        <Question ref={scrollThird}>당신이 사는 곳을 알려주세요.</Question>
         <BodySub>ex) 대한민국 제주도, 캐나다 몬트리올</BodySub>
         <TextArea placeholder="✑" value={location} onChange={(e) => setLocation(e.target.value)}></TextArea>
         <Question>당신의 이메일을 알려주세요.</Question>
-        <BodySub>이메일을 적어주시면 1년 주기로 당신의 여정을 묻고, 그 과정을 웹페이지에 반영합니다. </BodySub>
-        <TextArea placeholder="✑" value={email} onChange={(e) => setEmail(e.target.value)}></TextArea>
+        <BodySub>이메일을 적어주시면, 오늘 적은 당신의 꿈을 1년 뒤에 전해드립니다.</BodySub>
+        <TextArea
+          onFocus={scrollToThird}
+          placeholder="✑"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}></TextArea>
         <Question>당신의 꿈 이야기를 조금 더 자세하게 들려줄 수 있나요?</Question>
         <BodySub>인터뷰 형식으로 취재를 요청드리려 합니다.</BodySub>
 
@@ -113,12 +140,9 @@ const Form = () => {
         <WebcamCapture handleImgSrcChange={handleImgSrcChange} />
         <BodySub>모든 입력을 마치면, 우측의 별을 눌러 제출해 주세요.</BodySub>
       </WebcamCaptureWrapper>
-
-      <a href="/archive">
-        <GuidingHeaderWrapper onClick={handleFormSubmit}>
-          <GuidingHeader isCompleted={isFilled} />
-        </GuidingHeaderWrapper>
-      </a>
+      <GuidingHeaderWrapper onClick={handleFormSubmit}>
+        <GuidingHeader isCompleted={isFilled} />
+      </GuidingHeaderWrapper>
     </FormWrapper>
   );
 };

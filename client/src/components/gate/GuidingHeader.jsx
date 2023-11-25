@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const GuidingHeader = ({ isCompleted }) => {
-  console.log(isCompleted);
   return (
     <GuidingHeaderWrapper>
       <StyledGuidingLine $active={isCompleted} />
