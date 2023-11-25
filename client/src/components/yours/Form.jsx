@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 import WebcamCapture from './WebcamCapture';
@@ -6,8 +6,11 @@ import WebcamCapture from './WebcamCapture';
 import GuidingHeader from '../gate/GuidingHeader';
 
 import createMessage from '../../apis/create';
+import RecentPost from '../contexts/RecentPost';
 
 const Form = () => {
+  const { recentPost, setRecentPost } = useContext(RecentPost);
+
   const [dream, setDream] = useState('');
   const [why, setWhy] = useState('');
   const [when, setWhen] = useState('');
@@ -58,6 +61,7 @@ const Form = () => {
         email: email,
         deepInterview: deepInterview,
       });
+      setRecentPost(nameAge + dream);
     } catch (e) {
       console.log(e);
     }
