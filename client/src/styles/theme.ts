@@ -22,11 +22,11 @@ const fonts = {
   `,
   body1: css`
     font-family: Sandoll ClairSans;
-    font-size: 1.6rem;
-    line-height: 2.3rem;
+    font-size: 2rem;
+    line-height: 2.7rem;
   `,
   question1: css`
-    font-size: 1.6rem;
+    font-size: 2.3rem;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
   `,
