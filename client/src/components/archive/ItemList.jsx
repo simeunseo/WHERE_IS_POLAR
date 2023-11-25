@@ -32,7 +32,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   }, []);
 
   useEffect(() => {
-    console.log('allData 갱신');
+    console.log(data);
     if (data) {
       const allData = ARCHIVE_DATA.concat(data);
       setArchivedData(allData);
@@ -76,9 +76,8 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     <ItemListWrapper>
       {archivedData &&
         archivedData.map((item, idx) => (
-          <>
-            {React.createElement(dashedLineList[randomIdxList.current[idx]])}
-            <span>{item.name}</span>
+          <React.Fragment key={`fragment-${idx}`}>
+            {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
             <Item
               archivedData={archivedData}
               key={String(item._id) + item.name}
@@ -86,7 +85,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
               setIsModalOpen={setIsModalOpen}
               setCurItem={setCurItem}
             />
-          </>
+          </React.Fragment>
         ))}
       <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
     </ItemListWrapper>

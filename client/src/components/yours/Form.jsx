@@ -28,7 +28,6 @@ const Form = () => {
 
   const isFilled = dream && nameAge && imgSrc;
 
-  const navigate = useNavigate();
   const handleFormSubmit = async () => {
     try {
       createMessage({
@@ -44,7 +43,6 @@ const Form = () => {
         email: email,
         deepInterview: deepInterview,
       });
-      window.onload.reload();
     } catch (e) {
       console.log(e);
     }
