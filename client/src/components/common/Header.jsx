@@ -57,7 +57,7 @@ const StyledLogoMain = styled(LogoMain)`
 `;
 
 const Navigation = styled.nav`
-  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'translateX(38rem)' : 'none')};
+  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'translateX(45rem)' : 'none')};
   transition: transform 1s ease-in-out;
 
   display: flex;
