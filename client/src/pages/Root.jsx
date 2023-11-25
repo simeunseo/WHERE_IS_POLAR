@@ -2,14 +2,19 @@ import LogoMain from '../assets/svg/logo-main.svg?react';
 import Asterisk from '../assets/svg/asterisk.svg?react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import MouseContext from '../components/contexts/MouseContext';
 
 const Root = () => {
+  const { xy, setXY } = useContext(MouseContext);
+
   return (
-    <GateWrapper>
+    <GateWrapper onMouseMove={(e) => setXY({ x: e.clientX, y: e.clientY })}>
       <LogoMain />
       <Link to="/gate">
         <StyledAsterisk />
       </Link>
+      <MouseOnText $xy={xy}>반짝이는 북극성을 좇아보세요</MouseOnText>
     </GateWrapper>
   );
 };
@@ -64,4 +69,17 @@ const StyledAsterisk = styled(Asterisk)`
       transform: translateY(0);
     }
   }
+`;
+
+const MouseOnText = styled.aside`
+  padding: 0.7rem 1rem;
+  background-color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.grey10};
+
+  ${({ theme }) => theme.fonts.body1}
+  position: absolute;
+  left: ${({ $xy }) => `${$xy.x + 20}px`};
+  top: ${({ $xy }) => `${$xy.y + 20}px`};
+
+  width: max-content;
 `;
