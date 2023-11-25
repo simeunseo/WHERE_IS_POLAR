@@ -48,7 +48,20 @@ const StyledAsterisk = styled(Asterisk)`
   }
 
   transition: transform 0.5s ease-in-out;
+
   &:hover {
-    transform: translateY(-1rem);
+    animation: bounce 0.8s infinite ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 `;

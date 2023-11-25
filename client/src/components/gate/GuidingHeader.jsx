@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const GuidingHeader = ({ isCompleted }) => {
+  console.log(isCompleted);
   return (
     <GuidingHeaderWrapper>
       <StyledGuidingLine $active={isCompleted} />
@@ -40,14 +41,9 @@ const StyledLink = styled(Link)`
 const StyledAsterisk = styled(Asterisk)`
   margin: 0 3rem;
 
-
   & > * {
-    transition: fill 3s;
-    fill: ${({ theme, $active }) => ($active ? theme.colors.white : theme.colors.grey8)};
-  }
-
-  & > path {
-    animation: ${({ active }) => active && 'changeColor 2s infinite'}; 
+    fill: ${({ theme }) => theme.colors.grey8};
+    animation: ${({ $active }) => $active && 'changeColor 2s infinite ease-in-out'};
   }
 
   @keyframes changeColor {
@@ -60,4 +56,19 @@ const StyledAsterisk = styled(Asterisk)`
     100% {
       fill: ${({ theme }) => theme.colors.grey8};
     }
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  animation: ${({ $active }) => $active && 'bounce 0.8s infinite ease-in-out'};
 `;
