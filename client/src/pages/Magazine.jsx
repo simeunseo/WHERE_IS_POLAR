@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Footer from '../components/common/Footer';
 
 const Magazine = () => {
   return (
@@ -23,6 +24,7 @@ const Magazine = () => {
           </MagazineTitleContainer>
         </Link>
       </MagazineList>
+      <Footer />
     </>
   );
 };
