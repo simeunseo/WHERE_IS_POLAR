@@ -89,7 +89,11 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   return (
     <>
       {isLoading ? (
-        <QuestionWrapper>{randomQuestion}</QuestionWrapper>
+        <QuestionWrapper>
+          <LoadingDots />
+          {randomQuestion}
+          <LoadingDots />
+        </QuestionWrapper>
       ) : (
         <ItemListWrapper>
           {data &&
@@ -115,6 +119,19 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
 
 export default ItemList;
 
+const LoadingDots = styled.div`
+  width: 25rem;
+  height: 0.5rem;
+  background: radial-gradient(circle closest-side, #737373 92%, #0000) calc(100% / 3) 0 / calc(100% / 4) 100%;
+  animation: l2 0.5s infinite linear;
+
+  @keyframes l2 {
+    100% {
+      background-position: 0 0;
+    }
+  }
+`;
+
 const QuestionWrapper = styled.aside`
   width: 100%;
   height: 30rem;
@@ -126,7 +143,7 @@ const QuestionWrapper = styled.aside`
   padding-right: 14rem;
 
   ${({ theme }) => theme.fonts.head1}
-  color: ${({ theme }) => theme.colors.grey8}
+  color: ${({ theme }) => theme.colors.grey8};
 `;
 
 const ItemListWrapper = styled.main`

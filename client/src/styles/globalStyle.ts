@@ -46,5 +46,7 @@ body{
 
     font-family: Sandoll ClairSans, -apple-system, system-ui,  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 400;
+
+    zoom:80%;
 }
 `;
