@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import LogoMain from '../../assets/svg/logo-main.svg?react';
-import styled from 'styled-components';
+import Responsive from './Responsive/Responsive';
 import SlidePhrase from './SlidePhrase';
+import styled from 'styled-components';
 import { useState } from 'react';
 
 const Header = ({ isModalOpen }) => {
@@ -10,27 +11,29 @@ const Header = ({ isModalOpen }) => {
   return (
     <HeaderWrapper>
       <StyledLogoMain $isLogoClick={isLogoClick} onClick={() => setIsLogoClick(!isLogoClick)} />
-      <Navigation $isModalOpen={isModalOpen}>
-        <Link to="/archive">
-          <CategoryWrapper>
-            <Category>인류의 꿈을 보관합니다</Category>
-            <CategoryEng>Archive</CategoryEng>
-          </CategoryWrapper>
-        </Link>
-        <Link to="/magazine">
-          <CategoryWrapper>
-            <Category>더 깊은 이야기</Category>
-            <CategoryEng>Magazine</CategoryEng>
-          </CategoryWrapper>
-        </Link>
-        <Link to="/yours">
-          <CategoryWrapper>
-            <Category>당신도 들려주세요</Category>
-            <CategoryEng>Yours</CategoryEng>
-          </CategoryWrapper>
-        </Link>
-      </Navigation>
-      <SlidePhrase />
+      <Responsive only="desktop">
+        <Navigation $isModalOpen={isModalOpen}>
+          <Link to="/archive">
+            <CategoryWrapper>
+              <Category>인류의 꿈을 보관합니다</Category>
+              <CategoryEng>Archive</CategoryEng>
+            </CategoryWrapper>
+          </Link>
+          <Link to="/magazine">
+            <CategoryWrapper>
+              <Category>더 깊은 이야기</Category>
+              <CategoryEng>Magazine</CategoryEng>
+            </CategoryWrapper>
+          </Link>
+          <Link to="/yours">
+            <CategoryWrapper>
+              <Category>당신도 들려주세요</Category>
+              <CategoryEng>Yours</CategoryEng>
+            </CategoryWrapper>
+          </Link>
+        </Navigation>
+        <SlidePhrase />
+      </Responsive>
     </HeaderWrapper>
   );
 };
@@ -53,7 +56,7 @@ const StyledLogoMain = styled(LogoMain)`
   }
 
   transition: transform 1s ease-in-out;
-  transform: ${({ $isLogoClick }) => ($isLogoClick ? 'translateX(-15rem)' : 'none')};
+  transform: ${({ $isLogoClick }) => ($isLogoClick ? 'translateX(-11rem)' : 'none')};
 `;
 
 const Navigation = styled.nav`

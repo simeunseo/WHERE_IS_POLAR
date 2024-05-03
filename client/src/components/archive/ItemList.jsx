@@ -1,19 +1,21 @@
-import DescriptionModal from './DescriptionModal';
-import Item from './Item';
-import getMessage from '../../apis/get.js';
-import styled from 'styled-components';
 import { useMemo, useRef, useState } from 'react';
-import React from 'react';
-import { useEffect } from 'react';
+
 import DashedLine1 from '../../assets/svg/점선.svg?react';
 import DashedLine2 from '../../assets/svg/이중점선.svg?react';
 import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
 import DashedLine4 from '../../assets/svg/상향대각점선.svg?react';
 import DashedLine5 from '../../assets/svg/엑스자점선.svg?react';
-import getRandomQuestion from '../../utils/getRandomQuestion.js';
-import { useContext } from 'react';
+import DescriptionModal from './DescriptionModal';
+import Item from './Item';
+import React from 'react';
 import RecentPost from '../contexts/RecentPost.jsx';
-import MouseContext from '../contexts/MouseContext.jsx';
+import Responsive from '../common/Responsive/Responsive.jsx';
+import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery.ts';
+import getMessage from '../../apis/get.js';
+import getRandomQuestion from '../../utils/getRandomQuestion.js';
+import styled from 'styled-components';
+import { useContext } from 'react';
+import { useEffect } from 'react';
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   const [data, setData] = useState('');
@@ -52,6 +54,8 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     StyledDashedLine5,
   ];
 
+  const dashedLineListForTablet = [StyledDashedLine3, StyledDashedLine4, StyledDashedLine5];
+
   const getRandomIdxList = (listLength, maxNum) => {
     const result = [];
     for (let i = 0; i < listLength; i++) {
@@ -62,11 +66,13 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   };
 
   const randomIdxList = useRef(); //랜덤한 점선을 선택하기 위한 인덱스 리스트
+  const randomIdxListForTablet = useRef();
   const randomQuestion = getRandomQuestion();
 
   useMemo(() => {
     if (data) {
       randomIdxList.current = getRandomIdxList(data.length, 4);
+      randomIdxListForTablet.current = getRandomIdxList(data.length, 2);
     }
   }, [data]);
 
@@ -99,7 +105,14 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
           {data &&
             data.map((item, idx) => (
               <React.Fragment key={`fragment-${idx}`}>
-                {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
+                <Responsive only="desktop">
+                  {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
+                </Responsive>
+                <Responsive only="tablet">
+                  {React.createElement(dashedLineListForTablet[randomIdxListForTablet.current[idx]], {
+                    key: `dashed-line-${idx}`,
+                  })}
+                </Responsive>
                 <Item
                   ref={(el) => (postRefs.current[idx] = { id: item.name + item.phrase, element: el })}
                   archivedData={data}
@@ -149,20 +162,17 @@ const QuestionWrapper = styled.aside`
 const ItemListWrapper = styled.main`
   width: 100%;
 
-  overflow-y: scroll;
-
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5rem; */
-
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
 
   font-size: 0;
 
   padding-bottom: 30rem;
   padding-right: 40rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding-right: 0;
+  }
 `;
 
 const StyledDashedLine1 = styled(DashedLine1)`
@@ -175,12 +185,27 @@ const StyledDashedLine2 = styled(DashedLine2)`
 
 const StyledDashedLine3 = styled(DashedLine3)`
   margin-top: 4.2rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    height: 20rem;
+    width: 10rem;
+  }
 `;
 
 const StyledDashedLine4 = styled(DashedLine4)`
   margin-top: 4.2rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    height: 20rem;
+    width: 10rem;
+  }
 `;
 
 const StyledDashedLine5 = styled(DashedLine5)`
   margin-top: 4.2rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    height: 20rem;
+    width: 10rem;
+  }
 `;
