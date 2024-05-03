@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import CloseIcon from '../../assets/svg/close.svg?react';
 import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
 import styled from 'styled-components';
@@ -5,7 +7,11 @@ import styled from 'styled-components';
 const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
   const target = curItem;
   return (
-    <DiscriptionModalWrapper $isModalOpen={isModalOpen}>
+    <DiscriptionModalWrapper
+      $isModalOpen={isModalOpen}
+      onMouseMove={(e) => {
+        e.stopPropagation();
+      }}>
       <StyledCloseIcon onClick={() => setIsModalOpen(false)} />
       {target && (
         <>
@@ -68,7 +74,7 @@ const DiscriptionModalWrapper = styled.article`
 
   overflow-y: hidden;
 
-  visibility: ${({ $isModalOpen }) => ($isModalOpen ? 'visible' : 'hidden')};
+  display: ${({ $isModalOpen }) => ($isModalOpen ? 'flex' : 'none')};
 
   @media ${TABLET_MEDIA_QUERY} {
     right: 0;

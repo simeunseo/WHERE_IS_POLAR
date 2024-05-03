@@ -154,6 +154,7 @@ const QuestionWrapper = styled.aside`
   width: 100%;
   height: 30rem;
 
+  padding-right: 14rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +163,8 @@ const QuestionWrapper = styled.aside`
   color: ${({ theme }) => theme.colors.grey8};
 
   @media ${TABLET_MEDIA_QUERY} {
-    ${({ theme }) => theme.fonts.head2}
+    ${({ theme }) => theme.fonts.head2};
+    padding-right: 0;
   }
 `;
 
@@ -175,11 +177,6 @@ const ItemListWrapper = styled.main`
   font-size: 0;
 
   padding-bottom: 30rem;
-  padding-right: 40rem;
-
-  @media ${TABLET_MEDIA_QUERY} {
-    padding-right: 0;
-  }
 `;
 
 const StyledDashedLine1 = styled(DashedLine1)`
