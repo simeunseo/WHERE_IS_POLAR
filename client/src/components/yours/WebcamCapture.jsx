@@ -48,7 +48,7 @@ const StyledWebcam = styled(Webcam)`
   height: 48rem;
 
   @media ${MOBILE_MEDIA_QUERY} {
-    max-width: 39rem;
+    max-width: 30rem;
     max-height: 29rem;
   }
 `;
@@ -76,6 +76,6 @@ const CaptureButton = styled.button`
 
   @media ${MOBILE_MEDIA_QUERY} {
     left: 2rem;
-    bottom: 2rem;
+    bottom: 5rem;
   }
 `;
