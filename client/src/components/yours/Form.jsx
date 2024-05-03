@@ -1,12 +1,12 @@
 import { useContext, useRef, useState } from 'react';
-import styled from 'styled-components';
-
-import WebcamCapture from './WebcamCapture';
 
 import GuidingHeader from '../gate/GuidingHeader';
-
-import createMessage from '../../apis/create';
 import RecentPost from '../contexts/RecentPost';
+import Responsive from '../common/Responsive/Responsive';
+import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
+import WebcamCapture from './WebcamCapture';
+import createMessage from '../../apis/create';
+import styled from 'styled-components';
 
 const Form = () => {
   const { recentPost, setRecentPost } = useContext(RecentPost);
@@ -20,21 +20,6 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [deepInterview, setDeepInterview] = useState(true);
   const [imgSrc, setImgSrc] = useState('');
-
-  const scrollFirst = useRef(null);
-  const scrollToFirst = () => {
-    scrollFirst.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollSecond = useRef(null);
-  const scrollToSecond = () => {
-    scrollSecond.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollThird = useRef(null);
-  const scrollToThird = () => {
-    scrollThird.current.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const handleDeepInterviewChange = (e) => {
     setDeepInterview(e.target.id === 'yes' ? true : false);
@@ -83,33 +68,20 @@ const Form = () => {
           }}></TextArea>
         <Question>그 이유는 무엇인가요?</Question>
         <TextArea placeholder="✑" value={why} onChange={(e) => setWhy(e.target.value)}></TextArea>
-        <Question ref={scrollFirst}>언제 그 꿈을 이룰 것 같은가요?</Question>
+        <Question>언제 그 꿈을 이룰 것 같은가요?</Question>
         <TextArea placeholder="✑" value={when} onChange={(e) => setWhen(e.target.value)}></TextArea>
         <Question>꿈을 이루기 위해 무엇을 할 것인가요?</Question>
-        <TextArea
-          onFocus={scrollToFirst}
-          placeholder="✑"
-          value={what}
-          onChange={(e) => setWhat(e.target.value)}></TextArea>
-      </DreamQuestionWrapper>
-      <InfoQuestionWrapper ref={scrollSecond}>
+        <TextArea placeholder="✑" value={what} onChange={(e) => setWhat(e.target.value)}></TextArea>
+
         <Question>당신의 이름과 만나이를 알려주세요.</Question>
         <BodySub>익명을 원하신다면 닉네임이나 별명을 적어주세요. ex) 조은진, 23세</BodySub>
-        <TextArea
-          onFocus={scrollToSecond}
-          placeholder="✑"
-          value={nameAge}
-          onChange={(e) => setNameAge(e.target.value)}></TextArea>
-        <Question ref={scrollThird}>당신이 사는 곳을 알려주세요.</Question>
+        <TextArea placeholder="✑" value={nameAge} onChange={(e) => setNameAge(e.target.value)}></TextArea>
+        <Question>당신이 사는 곳을 알려주세요.</Question>
         <BodySub>ex) 대한민국 제주도, 캐나다 몬트리올</BodySub>
         <TextArea placeholder="✑" value={location} onChange={(e) => setLocation(e.target.value)}></TextArea>
         <Question>당신의 이메일을 알려주세요.</Question>
         <BodySub>이메일을 적어주시면, 오늘 적은 당신의 꿈을 1년 뒤에 전해드립니다.</BodySub>
-        <TextArea
-          onFocus={scrollToThird}
-          placeholder="✑"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}></TextArea>
+        <TextArea placeholder="✑" value={email} onChange={(e) => setEmail(e.target.value)}></TextArea>
         <Question>당신의 꿈 이야기를 조금 더 자세하게 들려줄 수 있나요?</Question>
         <BodySub>인터뷰 형식으로 취재를 요청드리려 합니다.</BodySub>
 
@@ -137,16 +109,17 @@ const Form = () => {
             />
           </>
         </StyledFormContainer>
-      </InfoQuestionWrapper>
-      <WebcamCaptureWrapper>
+
         <Question>사진을 남겨주세요.</Question>
         <BodySub>당신과 관련된 물건을 촬영해도 좋습니다.</BodySub>
         <WebcamCapture handleImgSrcChange={handleImgSrcChange} />
-        <BodySub>모든 입력을 마치면, 우측의 별을 눌러 제출해 주세요.</BodySub>
-      </WebcamCaptureWrapper>
-      <GuidingHeaderWrapper onClick={handleFormSubmit}>
-        <GuidingHeader isCompleted={isFilled} />
-      </GuidingHeaderWrapper>
+
+        <BodySub>모든 입력을 마치면, 하단의 별을 눌러 제출해 주세요.</BodySub>
+
+        <GuidingHeaderWrapper onClick={handleFormSubmit}>
+          <GuidingHeader isCompleted={isFilled} />
+        </GuidingHeaderWrapper>
+      </DreamQuestionWrapper>
     </FormWrapper>
   );
 };
@@ -196,6 +169,10 @@ const BtnWrapper = styled.div`
 
 const Question = styled.h2`
   ${({ theme }) => theme.fonts.question2};
+
+  @media ${TABLET_MEDIA_QUERY} {
+    ${({ theme }) => theme.fonts.question1};
+  }
 `;
 
 const BodySub = styled.p`
@@ -205,11 +182,15 @@ const BodySub = styled.p`
   text-align: left;
 
   margin-top: 2rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    ${({ theme }) => theme.fonts.body2};
+  }
 `;
 
 const StyledFormContainer = styled.form`
   padding-top: 2rem;
-
+  padding-bottom: 5rem;
   display: flex;
   gap: 1rem;
 `;
@@ -220,16 +201,23 @@ const DreamQuestionWrapper = styled.div`
   padding: 10rem;
   margin-top: 5rem;
   height: 80.3rem;
-  border: 1px solid ${({ theme }) => theme.colors.white};
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 5rem;
+    margin-top: 0;
+  }
 `;
 
 const InfoQuestionWrapper = styled.div`
   position: absolute;
-  right: 13.9rem;
+  left: -0.1rem;
   top: 90.3rem;
   height: 92.3rem;
   padding: 10rem;
-  border: 1px solid ${({ theme }) => theme.colors.white};
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 5rem;
+  }
 `;
 
 const WebcamCaptureWrapper = styled.div`
@@ -241,10 +229,13 @@ const WebcamCaptureWrapper = styled.div`
   flex-direction: column;
 
   padding: 10rem;
-  border: 1px solid ${({ theme }) => theme.colors.white};
 
   background-color: ${({ theme }) => theme.colors.grey10};
   z-index: 1;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 5rem;
+  }
 `;
 
 const StyedInput = styled.input`
@@ -258,23 +249,23 @@ const StyledLabel = styled.label`
   ${({ theme }) => theme.fonts.head2}
 `;
 
-const WebcamSubText = styled.p`
-  ${({ theme }) => theme.fonts.body1}
-  color: ${({ theme }) => theme.colors.grey8};
-  width: max-content;
+// const SubmitBtn = styled.button`
+//   color: black;
+//   ${({ theme }) => theme.fonts.head1};
 
-  text-align: left;
+//   padding: 1rem 2rem;
 
-  margin-top: 2rem;
+//   margin: 5rem 0;
 
-  &:hover {
-    cursor: pointer;
-    color: ${({ theme }) => theme.colors.white};
-  }
-`;
+//   cursor: pointer;
+
+//   &:hover {
+//     background-color: ${({ theme }) => theme.colors.grey10};
+//     color: ${({ theme }) => theme.colors.white};
+//     border: 0.1rem solid ${({ theme }) => theme.colors.white};
+//   }
+// `;
 
 const GuidingHeaderWrapper = styled.div`
-  position: absolute;
-  top: 233rem;
-  right: 25rem;
+  padding-bottom: 5rem;
 `;

@@ -25,6 +25,11 @@ const fonts = {
     font-size: 2rem;
     line-height: 2.7rem;
   `,
+  body2: css`
+    font-family: Sandoll ClairSans;
+    font-size: 1.8rem;
+    line-height: 2rem;
+  `,
   question1: css`
     font-size: 2.3rem;
     font-family: 'Noto Sans KR', sans-serif;

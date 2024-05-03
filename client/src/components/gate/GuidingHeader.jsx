@@ -1,14 +1,14 @@
-import React from 'react';
-import GuidingLine from '../../assets/svg/안내점선.svg?react';
 import Asterisk from '../../assets/svg/asterisk.svg?react';
+import GuidingLine from '../../assets/svg/안내점선.svg?react';
 import { Link } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 
 const GuidingHeader = ({ isCompleted }) => {
   return (
     <GuidingHeaderWrapper>
       <StyledGuidingLine $active={isCompleted} />
-      <StyledLink to="/archive" $active={isCompleted}>
+      <StyledLink to="/" $active={isCompleted}>
         <StyledAsterisk $active={isCompleted} />
       </StyledLink>
     </GuidingHeaderWrapper>

@@ -48,12 +48,16 @@ const HeaderWrapper = styled.header`
   padding: 8rem;
 
   @media ${TABLET_MEDIA_QUERY} {
-    padding: 2rem 8rem;
+    padding: 5rem;
   }
 `;
 
 const StyledLogoMain = styled(LogoMain)`
   cursor: pointer;
+
+  height: max-content;
+  max-height: 20rem;
+  width: max-content;
 
   & > path:first-child {
     transition: opacity 1s ease-in-out;

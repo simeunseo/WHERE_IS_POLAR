@@ -1,4 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
+
+import { MOBILE_MEDIA_QUERY } from '../../styles/mediaQuery';
 import Webcam from 'react-webcam';
 import styled from 'styled-components';
 
@@ -15,7 +17,7 @@ const WebcamCapture = ({ handleImgSrcChange }) => {
   return (
     <WebcamCaptureWrapper>
       {imgSrc ? (
-        <RecaptureButton onClick={() => setImgSrc(null)}>다시찍기</RecaptureButton>
+        <CaptureButton onClick={() => setImgSrc(null)}>다시찍기</CaptureButton>
       ) : (
         <CaptureButton onClick={capture}>촬영하기</CaptureButton>
       )}
@@ -44,12 +46,17 @@ const WebcamCaptureWrapper = styled.div`
 const StyledWebcam = styled(Webcam)`
   width: 64rem;
   height: 48rem;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    max-width: 39rem;
+    max-height: 29rem;
+  }
 `;
 
 const CaptureButton = styled.button`
   position: absolute;
   z-index: 1;
-  right: 3rem;
+  left: 3rem;
   bottom: 3rem;
   ${({ theme }) => theme.fonts.head2}
   background-color: ${({ theme }) => theme.colors.white};
@@ -67,22 +74,9 @@ const CaptureButton = styled.button`
     background-color: ${({ theme }) => theme.colors.grey10};
     color: ${({ theme }) => theme.colors.white};
   }
-`;
 
-const RecaptureButton = styled.button`
-  position: absolute;
-  z-index: 1;
-  right: 3rem;
-  bottom: 3rem;
-  ${({ theme }) => theme.fonts.head2}
-  background-color: ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.grey10};
-
-  border: 0.1rem solid ${({ theme }) => theme.colors.white};
-
-  width: max-content;
-  padding: 1rem 1.4rem;
-  border-radius: 2rem;
-
-  cursor: pointer;
+  @media ${MOBILE_MEDIA_QUERY} {
+    left: 2rem;
+    bottom: 2rem;
+  }
 `;
