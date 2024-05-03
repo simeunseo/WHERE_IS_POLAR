@@ -48,18 +48,14 @@ const DescriptionModal = ({ setIsModalOpen, isModalOpen, curItem }) => {
 export default DescriptionModal;
 
 const DiscriptionModalWrapper = styled.article`
-  display: flex;
   flex-direction: column;
-
-  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : '100vw')};
-  transition: transform 1.3s ease-in-out;
 
   background-color: ${({ theme }) => theme.colors.grey10};
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
   border-bottom: none;
 
   position: fixed;
-  right: 0rem;
+  right: 14rem;
 
   top: 0;
   z-index: 2;
@@ -72,11 +68,11 @@ const DiscriptionModalWrapper = styled.article`
 
   overflow-y: hidden;
 
+  visibility: ${({ $isModalOpen }) => ($isModalOpen ? 'visible' : 'hidden')};
+
   @media ${TABLET_MEDIA_QUERY} {
     right: 0;
     width: 100%;
-
-    display: ${({ $isModalOpen }) => ($isModalOpen ? 'block' : 'none')};
   }
 `;
 
