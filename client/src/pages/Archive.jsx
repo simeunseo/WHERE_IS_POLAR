@@ -29,7 +29,7 @@ const ArchiveWrapper = styled.div`
   @media ${TABLET_MEDIA_QUERY} {
     height: 100vh;
     @supports (height: 100dvh) {
-      height: 100dvh;
+      height: calc(100dvh + 25rem);
     }
 
     width: 100%;

@@ -33,10 +33,10 @@ const Btn = styled(Link)`
 `;
 
 const StyledPencilIcon = styled(PencilIcon)`
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
 `;
 
 const Text = styled.div`
-  ${({ theme }) => theme.fonts.head3}
+  ${({ theme }) => theme.fonts.head2}
 `;

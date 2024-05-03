@@ -1,5 +1,6 @@
+import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
+
 import { ARCHIVE_DATA } from '../../data/archiveData';
-import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -28,8 +29,8 @@ const Item = forwardRef(function Item({ archivedData, id, setIsModalOpen, setCur
 export default Item;
 
 const ItemWrapper = styled.div`
-  @media ${TABLET_MEDIA_QUERY} {
-    width: 30rem;
+  @media ${MOBILE_MEDIA_QUERY} {
+    width: min-content;
   }
 
   padding-top: 4.2rem;
@@ -60,7 +61,10 @@ const Img = styled.img`
 
   filter: grayscale(1);
 
-  transition: all 0.4s;
+  @media ${MOBILE_MEDIA_QUERY} {
+    height: 20rem;
+    min-width: calc(100vw - 10rem);
+  }
 `;
 
 const PhraseWrapper = styled.div`
@@ -82,6 +86,10 @@ const PhraseWrapper = styled.div`
   text-overflow: ellipsis;
   /* width: calc((100% - 35rem) / 4); */
   width: 100%;
+
+  @media ${MOBILE_MEDIA_QUERY} {
+    min-width: calc(100vw - 10rem);
+  }
 `;
 
 const Phrase = styled.span``;

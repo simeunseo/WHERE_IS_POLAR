@@ -177,6 +177,10 @@ const ItemListWrapper = styled.main`
   font-size: 0;
 
   padding-bottom: 30rem;
+  padding-right: 14rem;
+  @media ${TABLET_MEDIA_QUERY} {
+    padding-right: 0;
+  }
 `;
 
 const StyledDashedLine1 = styled(DashedLine1)`
