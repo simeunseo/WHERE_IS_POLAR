@@ -196,7 +196,7 @@ const StyledDashedLine3 = styled(DashedLine3)`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 28dvw;
+    width: 20dvw;
   }
 `;
 
@@ -205,7 +205,7 @@ const StyledDashedLine4 = styled(DashedLine4)`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 34dvw;
+    width: 24dvw;
   }
 `;
 
@@ -214,6 +214,6 @@ const StyledDashedLine5 = styled(DashedLine5)`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 40dvw;
+    width: 26dvw;
   }
 `;
