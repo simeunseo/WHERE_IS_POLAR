@@ -196,7 +196,7 @@ const StyledDashedLine3 = styled(DashedLine3)`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 15dvw;
+    width: 20dvw;
   }
 `;
 
@@ -205,7 +205,7 @@ const StyledDashedLine4 = styled(DashedLine4)`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 20dvw;
+    width: 24dvw;
   }
 `;
 
