@@ -51,7 +51,7 @@ const DiscriptionModalWrapper = styled.article`
   display: flex;
   flex-direction: column;
 
-  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : 'translateX(84rem)')};
+  transform: ${({ $isModalOpen }) => ($isModalOpen ? 'none' : '100vw')};
   transition: transform 1.3s ease-in-out;
 
   background-color: ${({ theme }) => theme.colors.grey10};
@@ -59,7 +59,7 @@ const DiscriptionModalWrapper = styled.article`
   border-bottom: none;
 
   position: fixed;
-  right: 14rem;
+  right: 0rem;
 
   top: 0;
   z-index: 2;
@@ -75,6 +75,8 @@ const DiscriptionModalWrapper = styled.article`
   @media ${TABLET_MEDIA_QUERY} {
     right: 0;
     width: 100%;
+
+    display: ${({ $isModalOpen }) => ($isModalOpen ? 'block' : 'none')};
   }
 `;
 
