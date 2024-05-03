@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import LogoMain from '../../assets/svg/logo-main.svg?react';
 import Responsive from './Responsive/Responsive';
 import SlidePhrase from './SlidePhrase';
+import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
 import styled from 'styled-components';
 import { useState } from 'react';
 
@@ -45,6 +46,10 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
 
   padding: 8rem;
+
+  @media ${TABLET_MEDIA_QUERY} {
+    padding: 2rem 8rem;
+  }
 `;
 
 const StyledLogoMain = styled(LogoMain)`

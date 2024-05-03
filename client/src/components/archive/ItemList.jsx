@@ -54,7 +54,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     StyledDashedLine5,
   ];
 
-  const dashedLineListForTablet = [StyledDashedLine3, StyledDashedLine4, StyledDashedLine5, EmptyLine, EmptyLine];
+  const dashedLineListForTablet = [StyledDashedLine3, StyledDashedLine4, StyledDashedLine5];
 
   const getRandomIdxList = (listLength, maxNum) => {
     const result = [];
@@ -72,7 +72,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   useMemo(() => {
     if (data) {
       randomIdxList.current = getRandomIdxList(data.length, 4);
-      randomIdxListForTablet.current = getRandomIdxList(data.length, 4);
+      randomIdxListForTablet.current = getRandomIdxList(data.length, 2);
     }
   }, [data]);
 
@@ -188,7 +188,7 @@ const StyledDashedLine3 = styled(DashedLine3)`
 
   @media ${TABLET_MEDIA_QUERY} {
     height: 20rem;
-    width: 10rem;
+    width: 9rem;
   }
 `;
 
@@ -197,7 +197,7 @@ const StyledDashedLine4 = styled(DashedLine4)`
 
   @media ${TABLET_MEDIA_QUERY} {
     height: 20rem;
-    width: 10rem;
+    width: 11rem;
   }
 `;
 
@@ -206,11 +206,6 @@ const StyledDashedLine5 = styled(DashedLine5)`
 
   @media ${TABLET_MEDIA_QUERY} {
     height: 20rem;
-    width: 10rem;
+    width: 13rem;
   }
-`;
-
-const EmptyLine = styled.div`
-  height: 20rem;
-  width: 7rem;
 `;

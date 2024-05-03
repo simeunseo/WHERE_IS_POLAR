@@ -29,7 +29,7 @@ export default Item;
 
 const ItemWrapper = styled.div`
   @media ${TABLET_MEDIA_QUERY} {
-    width: 35rem;
+    width: 30rem;
   }
 
   padding-top: 4.2rem;
@@ -68,10 +68,11 @@ const PhraseWrapper = styled.div`
   border: 0.1rem solid ${({ theme }) => theme.colors.white};
 
   padding: 1rem;
+  padding-top: 1.5rem;
 
   max-width: 70rem;
 
-  ${({ theme }) => theme.fonts.head1}
+  ${({ theme }) => theme.fonts.head3}
 
   /* position: absolute; */
   overflow: hidden;
