@@ -14,7 +14,7 @@ const Header = ({ isModalOpen }) => {
       <StyledLogoMain $isLogoClick={isLogoClick} onClick={() => setIsLogoClick(!isLogoClick)} />
       <Responsive only="desktop">
         <Navigation $isModalOpen={isModalOpen}>
-          <Link to="/archive">
+          <Link to="/">
             <CategoryWrapper>
               <Category>인류의 꿈을 보관합니다</Category>
               <CategoryEng>Archive</CategoryEng>

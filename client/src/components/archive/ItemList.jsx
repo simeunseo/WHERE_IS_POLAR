@@ -83,6 +83,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     const target = postRefs.current.find((item) => item.id === recentPost);
     if (target) {
       target.element.scrollIntoView({ behavior: 'smooth' });
+      postRefs.current = [];
     }
   };
 
@@ -143,6 +144,10 @@ const LoadingDots = styled.div`
       background-position: 0 0;
     }
   }
+
+  @media ${TABLET_MEDIA_QUERY} {
+    width: 7rem;
+  }
 `;
 
 const QuestionWrapper = styled.aside`
@@ -153,10 +158,12 @@ const QuestionWrapper = styled.aside`
   justify-content: center;
   align-items: center;
 
-  padding-right: 14rem;
-
   ${({ theme }) => theme.fonts.head1}
   color: ${({ theme }) => theme.colors.grey8};
+
+  @media ${TABLET_MEDIA_QUERY} {
+    ${({ theme }) => theme.fonts.head2}
+  }
 `;
 
 const ItemListWrapper = styled.main`

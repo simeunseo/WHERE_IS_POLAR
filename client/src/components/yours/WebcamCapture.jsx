@@ -66,7 +66,6 @@ const CaptureButton = styled.button`
 
   width: max-content;
   padding: 1rem 1.4rem;
-  border-radius: 2rem;
 
   cursor: pointer;
 

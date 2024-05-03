@@ -20,12 +20,16 @@ const Btn = styled(Link)`
 
   background-color: ${({ theme }) => theme.colors.white};
   border: 0.1rem solid black;
-  color: black;
+  color: ${({ theme }) => theme.colors.grey10};
   display: flex;
   align-items: center;
   gap: 1rem;
 
   padding: 1.5rem 2.5rem;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.grey10};
+  }
 `;
 
 const StyledPencilIcon = styled(PencilIcon)`
