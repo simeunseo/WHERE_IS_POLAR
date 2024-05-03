@@ -1,6 +1,7 @@
 import { ARCHIVE_DATA } from '../../data/archiveData';
-import styled from 'styled-components';
+import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
 import { forwardRef } from 'react';
+import styled from 'styled-components';
 
 const Item = forwardRef(function Item({ archivedData, id, setIsModalOpen, setCurItem }, ref) {
   const target = archivedData.find((item) => item._id === id);
@@ -27,7 +28,10 @@ const Item = forwardRef(function Item({ archivedData, id, setIsModalOpen, setCur
 export default Item;
 
 const ItemWrapper = styled.div`
-  /* width: 30rem; */
+  @media ${TABLET_MEDIA_QUERY} {
+    width: 35rem;
+  }
+
   padding-top: 4.2rem;
 
   cursor: pointer;

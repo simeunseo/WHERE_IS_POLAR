@@ -54,7 +54,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
     StyledDashedLine5,
   ];
 
-  const dashedLineListForTablet = [StyledDashedLine3, StyledDashedLine4, StyledDashedLine5];
+  const dashedLineListForTablet = [StyledDashedLine3, StyledDashedLine4, StyledDashedLine5, EmptyLine, EmptyLine];
 
   const getRandomIdxList = (listLength, maxNum) => {
     const result = [];
@@ -72,7 +72,7 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
   useMemo(() => {
     if (data) {
       randomIdxList.current = getRandomIdxList(data.length, 4);
-      randomIdxListForTablet.current = getRandomIdxList(data.length, 2);
+      randomIdxListForTablet.current = getRandomIdxList(data.length, 4);
     }
   }, [data]);
 
@@ -208,4 +208,9 @@ const StyledDashedLine5 = styled(DashedLine5)`
     height: 20rem;
     width: 10rem;
   }
+`;
+
+const EmptyLine = styled.div`
+  height: 20rem;
+  width: 7rem;
 `;
