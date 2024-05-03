@@ -1,6 +1,6 @@
+import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import ItemList from '../components/archive/ItemList';
-import Footer from '../components/common/Footer';
 import { useState } from 'react';
 const Archive = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

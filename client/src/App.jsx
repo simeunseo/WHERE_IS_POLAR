@@ -1,19 +1,22 @@
 import { GlobalStyle } from './styles/globalStyle';
+import { MouseContextProvider } from './components/contexts/MouseContext';
+import { RecentPostProvider } from './components/contexts/RecentPost';
+import ResponsiveProvider from './components/common/Responsive/ResponsiveProvider';
 import Router from './Router';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
-import { MouseContextProvider } from './components/contexts/MouseContext';
-import { RecentPostProvider } from './components/contexts/RecentPost';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <MouseContextProvider>
-        <RecentPostProvider>
-          <Router />
-        </RecentPostProvider>
-      </MouseContextProvider>
+      <ResponsiveProvider>
+        <MouseContextProvider>
+          <RecentPostProvider>
+            <Router />
+          </RecentPostProvider>
+        </MouseContextProvider>
+      </ResponsiveProvider>
     </ThemeProvider>
   );
 }
