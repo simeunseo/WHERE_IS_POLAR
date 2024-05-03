@@ -19,6 +19,7 @@ const fonts = {
   head3: css`
     font-family: Sandoll ClairSans;
     font-size: 3rem;
+    line-height: 3.5rem;
   `,
   body1: css`
     font-family: Sandoll ClairSans;

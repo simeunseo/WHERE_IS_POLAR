@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const GuidingHeader = ({ isCompleted }) => {
   return (
     <GuidingHeaderWrapper>
-      <StyledGuidingLine $active={isCompleted} />
+      {/* <StyledGuidingLine $active={isCompleted} /> */}
       <StyledLink to="/" $active={isCompleted}>
         <StyledAsterisk $active={isCompleted} />
       </StyledLink>
@@ -38,8 +38,6 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledAsterisk = styled(Asterisk)`
-  margin: 0 3rem;
-
   & > * {
     fill: ${({ theme }) => theme.colors.grey8};
     animation: ${({ $active }) => $active && 'changeColor 2s infinite ease-in-out'};

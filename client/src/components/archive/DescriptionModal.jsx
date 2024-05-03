@@ -83,7 +83,7 @@ const DiscriptionModalWrapper = styled.article`
 `;
 
 const Img = styled.img`
-  width: 38rem;
+  max-width: 38rem;
   height: 24rem;
   object-fit: cover;
 

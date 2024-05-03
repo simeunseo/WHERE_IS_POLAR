@@ -63,7 +63,7 @@ const Img = styled.img`
 
   @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    min-width: calc(100vw - 10rem);
+    max-width: 80dvw;
   }
 `;
 
@@ -88,7 +88,7 @@ const PhraseWrapper = styled.div`
   width: 100%;
 
   @media ${MOBILE_MEDIA_QUERY} {
-    min-width: calc(100vw - 10rem);
+    min-width: 70dvw;
   }
 `;
 

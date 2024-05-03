@@ -1,3 +1,4 @@
+import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from '../../styles/mediaQuery.ts';
 import { useMemo, useRef, useState } from 'react';
 
 import DashedLine1 from '../../assets/svg/점선.svg?react';
@@ -10,7 +11,6 @@ import Item from './Item';
 import React from 'react';
 import RecentPost from '../contexts/RecentPost.jsx';
 import Responsive from '../common/Responsive/Responsive.jsx';
-import { TABLET_MEDIA_QUERY } from '../../styles/mediaQuery.ts';
 import getMessage from '../../apis/get.js';
 import getRandomQuestion from '../../utils/getRandomQuestion.js';
 import styled from 'styled-components';
@@ -194,26 +194,26 @@ const StyledDashedLine2 = styled(DashedLine2)`
 const StyledDashedLine3 = styled(DashedLine3)`
   margin-top: 4.2rem;
 
-  @media ${TABLET_MEDIA_QUERY} {
+  @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 10rem;
+    width: 28dvw;
   }
 `;
 
 const StyledDashedLine4 = styled(DashedLine4)`
   margin-top: 4.2rem;
 
-  @media ${TABLET_MEDIA_QUERY} {
+  @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 12rem;
+    width: 34dvw;
   }
 `;
 
 const StyledDashedLine5 = styled(DashedLine5)`
   margin-top: 4.2rem;
 
-  @media ${TABLET_MEDIA_QUERY} {
+  @media ${MOBILE_MEDIA_QUERY} {
     height: 20rem;
-    width: 14rem;
+    width: 40dvw;
   }
 `;
