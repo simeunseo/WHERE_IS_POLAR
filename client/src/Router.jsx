@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import Archive from './pages/Archive';
 import Gate from './pages/Gate';
@@ -21,6 +21,7 @@ const Router = () => {
         <Route path="/magazine" element={<Magazine />} />
         <Route path="/magazine/1" element={<Magazine1 />} />
         <Route path="/magazine/2" element={<Magazine2 />} />
+        <Route path="/archive" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
