@@ -1,6 +1,4 @@
-import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from '../../styles/mediaQuery';
-
-import { ARCHIVE_DATA } from '../../data/archiveData';
+import { MOBILE_MEDIA_QUERY } from '../../styles/mediaQuery';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -16,7 +14,7 @@ const Item = forwardRef(function Item({ archivedData, id, setIsModalOpen, setCur
       {target.imgSrc ? (
         <Img src={target.imgSrc} alt={target.name} />
       ) : (
-        <Img src="https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg" alt="no-image" />
+        <Img src="https://d1mp1wk28u6ko1.cloudfront.net/no-image.jpg" alt="no-image" loading="lazy" />
       )}
 
       <PhraseWrapper>

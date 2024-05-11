@@ -1,6 +1,7 @@
 import { MOBILE_MEDIA_QUERY, TABLET_MEDIA_QUERY } from '../../styles/mediaQuery.ts';
 import { useMemo, useRef, useState } from 'react';
 
+import { ARCHIVE_DATA } from '../../data/archiveData';
 import DashedLine1 from '../../assets/svg/점선.svg?react';
 import DashedLine2 from '../../assets/svg/이중점선.svg?react';
 import DashedLine3 from '../../assets/svg/하향대각점선.svg?react';
@@ -14,37 +15,43 @@ import Responsive from '../common/Responsive/Responsive.jsx';
 import getMessage from '../../apis/get.js';
 import getRandomQuestion from '../../utils/getRandomQuestion.js';
 import styled from 'styled-components';
-import { useContext } from 'react';
-import { useEffect } from 'react';
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 const ItemList = ({ isModalOpen, setIsModalOpen }) => {
-  const [data, setData] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState(shuffleArray([...ARCHIVE_DATA]));
+  // const [isLoading, setIsLoading] = useState(false);
 
   //현재 선택된 item
   const [curItem, setCurItem] = useState(null);
 
-  const { recentPost, setRecentPost } = useContext(RecentPost);
+  // const { recentPost, setRecentPost } = useContext(RecentPost);
 
   //message list api 통신
-  const getMessages = async () => {
-    try {
-      const {
-        data: { messages },
-      } = await getMessage();
-      setData(messages);
-    } catch (e) {
-      console.log(e);
-    }
-    setIsLoading(false);
-  };
+  // const getMessages = async () => {
+  //   try {
+  //     const {
+  //       data: { messages },
+  //     } = await getMessage();
+  //     setData(messages);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  //   setIsLoading(false);
+  // };
 
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      getMessages();
-    }, 500);
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   setTimeout(() => {
+  //     getMessages();
+  //   }, 500);
+  // }, []);
 
   const dashedLineList = [
     StyledDashedLine1,
@@ -71,62 +78,62 @@ const ItemList = ({ isModalOpen, setIsModalOpen }) => {
 
   useMemo(() => {
     if (data) {
-      randomIdxList.current = getRandomIdxList(data.length, 4);
-      randomIdxListForTablet.current = getRandomIdxList(data.length, 2);
+      randomIdxList.current = getRandomIdxList(ARCHIVE_DATA.length, 4);
+      randomIdxListForTablet.current = getRandomIdxList(ARCHIVE_DATA.length, 2);
     }
-  }, [data]);
+  }, []);
 
   // 생성된 포스트로 스크롤
-  const postRefs = useRef([]);
+  // const postRefs = useRef([]);
 
-  const scrollToPost = () => {
-    const target = postRefs.current.find((item) => item.id === recentPost);
-    if (target) {
-      target.element.scrollIntoView({ behavior: 'smooth' });
-      postRefs.current = [];
-    }
-  };
+  // const scrollToPost = () => {
+  //   const target = postRefs.current.find((item) => item.id === recentPost);
+  //   if (target) {
+  //     target.element.scrollIntoView({ behavior: 'smooth' });
+  //     postRefs.current = [];
+  //   }
+  // };
 
-  if (!isLoading) {
-    setTimeout(() => {
-      scrollToPost();
-    }, 500);
-  }
+  // if (!isLoading) {
+  //   setTimeout(() => {
+  //     scrollToPost();
+  //   }, 500);
+  // }
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <QuestionWrapper>
           <LoadingDots />
           {randomQuestion}
           <LoadingDots />
         </QuestionWrapper>
-      ) : (
-        <ItemListWrapper>
-          {data &&
-            data.map((item, idx) => (
-              <React.Fragment key={`fragment-${idx}`}>
-                <Responsive only="desktop">
-                  {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
-                </Responsive>
-                <Responsive only="tablet">
-                  {React.createElement(dashedLineListForTablet[randomIdxListForTablet.current[idx]], {
-                    key: `dashed-line-${idx}`,
-                  })}
-                </Responsive>
-                <Item
-                  ref={(el) => (postRefs.current[idx] = { id: item.name + item.phrase, element: el })}
-                  archivedData={data}
-                  key={String(item._id)}
-                  id={item._id}
-                  setIsModalOpen={setIsModalOpen}
-                  setCurItem={setCurItem}
-                />
-              </React.Fragment>
-            ))}
-          <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
-        </ItemListWrapper>
-      )}
+      ) : ( */}
+      <ItemListWrapper>
+        {data &&
+          data.map((item, idx) => (
+            <React.Fragment key={`fragment-${idx}`}>
+              <Responsive only="desktop">
+                {React.createElement(dashedLineList[randomIdxList.current[idx]], { key: `dashed-line-${idx}` })}
+              </Responsive>
+              <Responsive only="tablet">
+                {React.createElement(dashedLineListForTablet[randomIdxListForTablet.current[idx]], {
+                  key: `dashed-line-${idx}`,
+                })}
+              </Responsive>
+              <Item
+                // ref={(el) => (postRefs.current[idx] = { id: item.name + item.phrase, element: el })}
+                archivedData={data}
+                key={String(item._id)}
+                id={item._id}
+                setIsModalOpen={setIsModalOpen}
+                setCurItem={setCurItem}
+              />
+            </React.Fragment>
+          ))}
+        <DescriptionModal setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} curItem={curItem} />
+      </ItemListWrapper>
+      {/* )} */}
     </>
   );
 };
